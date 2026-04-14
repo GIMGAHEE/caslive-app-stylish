@@ -476,7 +476,7 @@ ul { list-style: none; }
 /* === DOWNLOAD CTA === */
 .download-cta {
   background: linear-gradient(0deg, #7FCDFE 0%, #B99CE0 100%);
-  padding: clamp(60px,8vw,80px) 0 clamp(60px,8vw,80px);
+  padding: clamp(140px,16vw,200px) 0 clamp(60px,8vw,80px);
   overflow: hidden;
   position: relative;
 }

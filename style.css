@@ -632,7 +632,7 @@ ul { list-style: none; }
 }
 .banners__inner { max-width: 1290px; margin: 0 auto; padding: 0 var(--gutter); display: flex; flex-direction: row; gap: clamp(20px,4vw,74px); justify-content: center; align-items: center; }
 .banners__item { display: block; flex-shrink: 0; }
-.banners__img { width: clamp(260px,44vw,600px); height: clamp(170px,22vw,320px); object-fit: cover; border-radius: 10px; display: block; }
+.banners__img { width: clamp(260px,46%,600px); height: clamp(170px,22vw,320px); object-fit: cover; border-radius: 10px; display: block; flex: 1; }
 
 /* === FOOTER === */
 .footer { background: #1A1A1A; padding: clamp(40px,5vw,60px) clamp(20px,2vw,30px); }

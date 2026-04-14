@@ -221,7 +221,7 @@ ul { list-style: none; }
   width: clamp(70px, 7vw, 110px);
   height: clamp(70px, 7vw, 110px);
   border-radius: 50%;
-  background: rgba(255,255,255,0.85);
+  background: #ffffff;
   z-index: 2;
 }
 .users__badge span {

@@ -598,6 +598,7 @@ ul { list-style: none; }
 
 /* === NEWS === */
 .news { background: #fff; padding: clamp(60px,6vw,80px) 0; }
+.news .section-inner { max-width: 1040px; }
 .news__tags { display: flex; gap: 8px; justify-content: center; margin-bottom: clamp(24px,3vw,40px); flex-wrap: wrap; }
 .news__tag { padding: 4px 20px; border-radius: 4px; font-size: 12px; font-weight: 500; cursor: pointer; border: none; height: 30px; color: #fff; transition: opacity .2s; }
 .news__tag--all { background: #706C76; }

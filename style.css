@@ -380,18 +380,9 @@ ul { list-style: none; }
   background-color: #f8f8f8;
   background-image: radial-gradient(circle, #c8c8c8 1px, transparent 1px);
   background-size: 20px 20px;
-  padding: var(--section-y) 0 clamp(60px,8vw,120px);
+  padding: var(--section-y) 0 clamp(20px,2vw,20px);
   position: relative;
   overflow: hidden;
-}
-/* features → DL セクション の V字切り替え */
-.features::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: clamp(40px,6vw,80px);
-  background: linear-gradient(0deg, #B99CE0 0%, #7FCDFE 100%);
-  clip-path: polygon(0 0%, 50% 100%, 100% 0%);
 }
 .features__bg { display: none; }
 /* 3カラムグリッド */
@@ -477,6 +468,19 @@ ul { list-style: none; }
   background: linear-gradient(0deg, #7FCDFE 0%, #B99CE0 100%);
   padding: clamp(60px,8vw,80px) 0 clamp(60px,8vw,80px);
   overflow: hidden;
+  position: relative;
+}
+/* features→DL: 白ドット逆三角を上に重ねる */
+.download-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: clamp(60px,8vw,120px);
+  background-color: #f8f8f8;
+  background-image: radial-gradient(circle, #c8c8c8 1px, transparent 1px);
+  background-size: 20px 20px;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  z-index: 1;
 }
 .download-cta__inner {
   display: flex;

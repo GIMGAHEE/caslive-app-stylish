@@ -377,17 +377,14 @@ ul { list-style: none; }
 
 /* === FEATURES === */
 .features {
-  background: #f8f8f8;
+  background-color: #f8f8f8;
+  background-image: radial-gradient(circle, #c8c8c8 1px, transparent 1px);
+  background-size: 20px 20px;
   padding: var(--section-y) 0 clamp(20px,2vw,20px);
   position: relative;
   overflow: hidden;
 }
-.features__bg {
-  position: absolute; inset: 0;
-  background: url('https://www.figma.com/api/mcp/asset/f9251e4b-5a81-4c26-a515-96b272036ae2') top left / 540px auto no-repeat;
-  opacity: .25;
-  pointer-events: none;
-}
+.features__bg { display: none; }
 /* 3カラムグリッド */
 .features__cards {
   display: flex;

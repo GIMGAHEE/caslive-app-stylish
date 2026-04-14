@@ -353,42 +353,33 @@ ul { list-style: none; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  width: 120px;
+  height: 120px;
 }
 .users__badge img {
-  width: 146px;
-  height: 146px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 .users__badge span {
   position: relative;
   z-index: 1;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   text-align: center;
   line-height: 1.4;
-  width: 100px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .users__badge--blue span { color: var(--color-main); }
 .users__badge--purple span { color: var(--color-main-2); }
 .users__badge--left {
-  left: -30px;
-  top: 30%;
-  width: 96px;
-  height: 96px;
+  left: -50px;
+  top: 28%;
 }
 .users__badge--right {
-  right: -30px;
-  top: 50%;
-  width: 96px;
-  height: 96px;
+  right: -50px;
+  top: 48%;
 }
 .users__desc {
   font-size: 18px;

@@ -155,7 +155,7 @@ ul { list-style: none; }
   display: flex; align-items: center;
   justify-content: flex-end; line-height: 1;
 }
-.mv__text-img--left  { height: clamp(56px,8.5vw,117px); width: auto; }
+.mv__text-img--left  { height: clamp(44px,6vw,88px); width: auto; }
 .mv__text-img--right { height: clamp(58px,9vw,120px); width: auto; }
 .mv__plain {
   color: #EFF8FF;

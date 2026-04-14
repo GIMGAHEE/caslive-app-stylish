@@ -385,15 +385,14 @@ ul { list-style: none; }
   overflow: hidden;
 }
 .features__bg { display: none; }
-/* features下部のV字SVGウェーブ */
-.features::after {
-  content: '';
-  display: block;
+.features__wave {
   width: 100%;
-  height: clamp(60px,8vw,100px);
-  background: linear-gradient(0deg, #B99CE0 0%, #9B73D4 100%);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,0 720,100 1440,0 1440,0 0,0' fill='black'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,0 720,100 1440,0 1440,0 0,0' fill='black'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+  line-height: 0;
+  margin-top: clamp(40px,5vw,80px);
+}
+.features__wave svg {
+  width: 100%;
+  display: block;
 }
 /* 3カラムグリッド */
 .features__cards {

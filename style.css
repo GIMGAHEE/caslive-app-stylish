@@ -410,11 +410,23 @@ ul { list-style: none; }
    ============================================ */
 .live {
   background: var(--color-base-1);
-  padding: 120px 0;
+  padding: 0 0 120px;
+  position: relative;
+}
+/* V字ウェーブ */
+.live__wave {
+  width: 100%;
+  line-height: 0;
+  background: #fff;
+}
+.live__wave svg {
+  width: 100%;
+  height: 80px;
+  display: block;
 }
 .live__title {
   text-align: center;
-  margin-bottom: 60px;
+  padding: 60px 0 60px;
 }
 .live__heading {
   font-size: clamp(28px, 3.5vw, 46px);
@@ -427,24 +439,23 @@ ul { list-style: none; }
   flex-direction: column;
   align-items: center;
 }
-/* 各ポイント: 左画像 + 右テキスト */
+/* 各ポイント: 左右50:50固定 */
 .live__point {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 80px 200px;
   width: 100%;
-  max-width: 1440px;
-  gap: 60px;
+  padding: 80px 200px;
   box-sizing: border-box;
+  gap: 0;
 }
-/* 左: 画像 */
+/* 左: 画像 — 常に50% */
 .live__point-img {
-  flex-shrink: 0;
-  width: 520px;
+  flex: 0 0 50%;
+  width: 50%;
   height: 395px;
   overflow: hidden;
   position: relative;
+  box-sizing: border-box;
 }
 .live__point-img--pink {
   border-left: 10px solid var(--color-accent-2);
@@ -455,13 +466,15 @@ ul { list-style: none; }
   object-fit: cover;
   display: block;
 }
-/* 右: テキスト */
+/* 右: テキスト — 常に50% */
 .live__point-text {
-  flex: 1;
+  flex: 0 0 50%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 476px;
+  padding-left: 60px;
+  box-sizing: border-box;
 }
 .live__point-tag {
   display: inline-block;
@@ -473,13 +486,13 @@ ul { list-style: none; }
   align-self: flex-start;
 }
 .live__point-title {
-  font-size: 30px;
+  font-size: clamp(20px, 2.2vw, 30px);
   font-weight: 700;
   color: var(--color-accent-2);
   line-height: 1.4;
 }
 .live__point-desc {
-  font-size: 16px;
+  font-size: clamp(14px, 1.2vw, 16px);
   font-weight: 400;
   line-height: 1.75;
   color: #333;
@@ -487,7 +500,7 @@ ul { list-style: none; }
 .live__point-list {
   list-style: none;
   padding: 0;
-  font-size: 14px;
+  font-size: clamp(12px, 1vw, 14px);
   color: #333;
   line-height: 2;
 }
@@ -879,11 +892,13 @@ ul { list-style: none; }
   .users__divider img { width: 100%; height: 2px; transform: none; }
 
   /* Live */
-  .live { padding: 60px 0; }
-  .live__point { flex-direction: column; padding: 40px 24px; gap: 28px; }
-  .live__point-img { width: 100%; height: 240px; }
-  .live__point-text { max-width: 100%; }
-  .live__point-title { font-size: 22px; }
+  .live { padding: 0 0 60px; }
+  .live__wave svg { height: 50px; }
+  .live__title { padding: 40px 0 40px; }
+  .live__point { flex-direction: column; padding: 40px 24px; }
+  .live__point-img { flex: none; width: 100%; height: 240px; }
+  .live__point-text { flex: none; width: 100%; padding-left: 0; padding-top: 24px; }
+  .live__point-title { font-size: 20px; }
   .live__divider { width: 80%; }
 
   /* Commerce */

@@ -147,11 +147,11 @@ ul { list-style: none; }
 .live__title { text-align: center; padding: clamp(40px,5vw,80px) var(--gutter) clamp(32px,4vw,60px); }
 .live__heading { font-size: clamp(22px,3.5vw,46px); font-weight: 900; color: var(--color-text); margin-top: 6px; }
 .live__points { display: flex; flex-direction: column; align-items: center; width: 100%; overflow: hidden; }
-.live__point { display: flex; align-items: stretch; width: 100%; box-sizing: border-box; }
-.live__point-img { flex: 0 0 50%; min-width: 0; overflow: hidden; position: relative; min-height: clamp(200px,26vw,395px); padding-left: var(--gutter); box-sizing: border-box; }
+.live__point { display: flex; align-items: stretch; width: 100%; padding: clamp(32px,4.5vw,80px) var(--gutter); gap: clamp(20px,3vw,60px); box-sizing: border-box; overflow: hidden; }
+.live__point-img { flex: 0 0 calc(50% - clamp(10px,1.5vw,30px)); min-width: 0; overflow: hidden; position: relative; min-height: clamp(200px,26vw,395px); }
 .live__point-img--pink { border-left: clamp(4px,.7vw,10px) solid var(--color-accent-2); }
 .live__point-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.live__point-text { flex: 0 0 50%; min-width: 0; display: flex; flex-direction: column; gap: clamp(12px,1.5vw,20px); justify-content: center; padding: clamp(32px,4.5vw,80px) var(--gutter) clamp(32px,4.5vw,80px) clamp(24px,3vw,60px); box-sizing: border-box; }
+.live__point-text { flex: 0 0 calc(50% - clamp(10px,1.5vw,30px)); min-width: 0; display: flex; flex-direction: column; gap: clamp(12px,1.5vw,20px); justify-content: center; }
 .live__point-tag { display: inline-block; background: var(--color-accent-2); color: #fff; font-size: clamp(11px,1vw,14px); font-weight: 700; padding: 2px 12px; align-self: flex-start; }
 .live__point-title { font-size: clamp(17px,2.2vw,30px); font-weight: 700; color: var(--color-accent-2); line-height: 1.4; }
 .live__point-desc { font-size: clamp(13px,1.2vw,16px); font-weight: 400; line-height: 1.75; color: #333; }

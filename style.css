@@ -341,20 +341,14 @@ ul { list-style: none; }
 .commerce__card-title {
   font-size: clamp(16px,1.8vw,30px);
   font-weight: 700;
-  color: #fff;
+  color: #333;
   line-height: 1.4;
-}
-.commerce__card-title .text-purple-light {
-  color: #fff;
-  background: rgba(255,255,255,0.25);
-  padding: 2px 6px;
-  border-radius: 4px;
 }
 .commerce__card-desc {
   font-size: clamp(13px,1.1vw,18px);
   font-weight: 500;
   line-height: 1.9;
-  color: rgba(255,255,255,0.9);
+  color: #333;
   text-align: justify;
   max-width: 600px;
 }

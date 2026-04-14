@@ -744,7 +744,7 @@ ul { list-style: none; }
   .users__col { gap: 26px; align-items: center; }
   .users__label { font-size: 32px; padding: 4px 30px; }
   /* Figma: 앱 이미지 크게 (344px 컨테이너) */
-  .users__img-wrap { width: 344px; max-width: 95vw; overflow: visible; margin: 0 auto; justify-content: center; }
+  .users__img-wrap { max-width: 95vw; overflow: visible; margin: 0 auto; display: flex; justify-content: center; }
   .users__app-img { width: 227px; border-radius: 16px; }
   .users__badge { width: 95px; height: 95px; outline: 2px solid #fff; }
   .users__badge span { font-size: 14px; text-shadow: none; -webkit-text-stroke: 0; }

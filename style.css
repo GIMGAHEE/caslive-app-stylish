@@ -400,20 +400,24 @@ ul { list-style: none; }
   background: rgba(255,255,255,0.5);
   border-top: 3px solid var(--color-accent-1);
   border-left: 3px solid var(--color-accent-1);
-  border-radius: 0 0 clamp(20px,2.5vw,35px) 0;
+  border-radius: clamp(16px,2.5vw,35px) 0 clamp(16px,2.5vw,35px) 0;
   width: clamp(260px,28vw,405px);
   padding: clamp(24px,3vw,46px) 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: clamp(24px,4vw,59px);
+  min-height: clamp(500px,60vw,845px);
+  justify-content: space-between;
 }
 /* ラベル行 */
 .features__card-label {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: clamp(4px,.6vw,8px);
   width: clamp(200px,24vw,334px);
+  align-self: flex-start;
+  padding-left: clamp(16px,2.5vw,35px);
 }
 .features__card-label img {
   width: clamp(16px,1.6vw,22px);
@@ -421,45 +425,36 @@ ul { list-style: none; }
   flex-shrink: 0;
 }
 .features__card-title {
-  font-size: clamp(16px,1.8vw,27.7px);
+  font-size: clamp(15px,1.8vw,27.7px);
   font-weight: 700;
   color: var(--color-main-2);
   white-space: nowrap;
 }
-/* 画像エリア */
+/* 画像エリア: Figma絶対座標ベース */
 .features__card-mockups {
   position: relative;
   width: clamp(200px,24vw,329px);
   height: clamp(240px,28vw,371px);
   flex-shrink: 0;
 }
-/* バトル: 2枚重ね */
+/* バトル: 左下/右上 (329x371) BT:205x322 top=49, VS:205x322 left=124 top=0 */
 .features__mockup {
   position: absolute;
   object-fit: contain;
 }
 .features__mockup--left  { width: 62%; left: 0; bottom: 0; }
 .features__mockup--right { width: 62%; right: 0; top: 0; }
-/* EC: 2枚重ね (grid) */
-.features__card-mockups--ec {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-}
-.features__card-mockups--ec .features__mockup {
-  position: absolute;
-  object-fit: contain;
-}
-.features__card-mockups--ec .features__mockup--left  { width: 66%; left: 0; top: 10%; }
-.features__card-mockups--ec .features__mockup--right { width: 62%; right: 0; top: 0; }
-/* オークション: 2枚重ね */
-.features__card-mockups--auction .features__mockup--left  { width: 40%; left: 0; bottom: 0; }
+/* EC: 左上/右下 Smartphone2:219x320 left=0 top=0, Smartphone1:206x324 left=43% top=10% */
+.features__card-mockups--ec .features__mockup--left  { width: 66%; left: 0; top: 0; bottom: auto; }
+.features__card-mockups--ec .features__mockup--right { width: 62%; right: 0; top: 10%; }
+/* オークション: 左下/右上 Group1:129x267 left=0 top=52, Group2:174x359 left=33% top=0 */
+.features__card-mockups--auction .features__mockup--left  { width: 40%; left: 0; bottom: 0; top: auto; }
 .features__card-mockups--auction .features__mockup--right { width: 53%; right: 0; top: 0; }
 /* テキスト */
 .features__card-text {
-  font-size: clamp(13px,1.2vw,18px);
+  font-size: clamp(13px,1.3vw,22px);
   font-weight: 500;
-  line-height: 1.8;
+  line-height: 1.79;
   color: #333;
   text-align: justify;
   width: clamp(200px,24vw,312px);

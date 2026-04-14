@@ -399,7 +399,7 @@ ul { list-style: none; }
 .features__card {
   /* グラデーションボーダー: background-clipトリック */
   background:
-    linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)) padding-box,
+    linear-gradient(#ffffff, #ffffff) padding-box,
     linear-gradient(135deg, #7FCDFE 0%, #B99CE0 100%) border-box;
   border: 3px solid transparent;
   border-right: none;

@@ -127,15 +127,15 @@ ul { list-style: none; }
 .users__label { font-size: clamp(22px,3.2vw,46px); font-weight: 900; color: #fff; padding: 4px clamp(14px,2vw,30px); white-space: nowrap; }
 .users__label--liver  { background: var(--color-main); }
 .users__label--viewer { background: var(--color-main-2); }
-.users__img-grid { position: relative; width: 100%; display: flex; justify-content: center; padding: 0 clamp(40px,6vw,70px); }
+.users__img-grid { position: relative; width: 100%; display: flex; justify-content: center; }
 .users__app-img { width: 100%; max-width: 339px; border-radius: 16px; }
 .users__badge { position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: center; width: clamp(70px,7vw,120px); height: clamp(70px,7vw,120px); }
 .users__badge img { position: absolute; width: 100%; height: 100%; object-fit: contain; }
 .users__badge span { position: relative; z-index: 1; font-size: clamp(11px,1.2vw,18px); font-weight: 500; text-align: center; line-height: 1.4; }
 .users__badge--blue span   { color: var(--color-main); }
 .users__badge--purple span { color: var(--color-main-2); }
-.users__badge--left  { left: 0; top: 28%; }
-.users__badge--right { right: 0; top: 48%; }
+.users__badge--left  { left: -10px; top: 28%; }
+.users__badge--right { right: -10px; top: 48%; }
 .users__desc { font-size: clamp(13px,1.1vw,18px); font-weight: 500; line-height: 2; max-width: 340px; text-align: justify; color: var(--color-text-sub); }
 .users__divider { flex-shrink: 0; width: 2px; align-self: stretch; min-height: 300px; opacity: .25; }
 .users__divider img { width: 2px; height: 100%; object-fit: cover; transform: rotate(90deg); }
@@ -147,7 +147,7 @@ ul { list-style: none; }
 .live__title { text-align: center; padding: clamp(40px,5vw,80px) var(--gutter) clamp(32px,4vw,60px); }
 .live__heading { font-size: clamp(22px,3.5vw,46px); font-weight: 900; color: var(--color-text); margin-top: 6px; }
 .live__points { display: flex; flex-direction: column; align-items: center; }
-.live__point { display: flex; align-items: stretch; width: 100%; padding: clamp(32px,4.5vw,80px) var(--gutter); gap: clamp(24px,4vw,60px); }
+.live__point { display: flex; align-items: stretch; width: 100%; max-width: 1290px; margin: 0 auto; padding: clamp(32px,4.5vw,80px) var(--gutter); gap: clamp(24px,4vw,60px); }
 .live__point-img { flex: 0 0 50%; min-width: 0; overflow: hidden; position: relative; min-height: clamp(200px,26vw,395px); }
 .live__point-img--pink { border-left: clamp(4px,.7vw,10px) solid var(--color-accent-2); }
 .live__point-img img { width: 100%; height: 100%; object-fit: cover; display: block; }

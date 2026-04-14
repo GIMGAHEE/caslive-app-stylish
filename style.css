@@ -66,12 +66,10 @@ ul { list-style: none; }
 .mv__bg-img1 {
   position: absolute; height: 100%; left: -24.21%; top: 0;
   width: 124.2%; object-fit: cover;
-  mix-blend-mode: screen; opacity: 0.36;
 }
 .mv__bg-img2 {
   position: absolute; height: 100%; left: -41.26%; top: 0;
-  width: 185.16%; object-fit: cover;
-  mix-blend-mode: screen; opacity: 1;
+  width: 185.16%; object-fit: cover; opacity: .36;
 }
 .mv__content {
   position: relative; z-index: 2;

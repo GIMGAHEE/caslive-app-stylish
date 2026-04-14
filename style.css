@@ -703,7 +703,6 @@ ul { list-style: none; }
   }
   /* SP順序: ヘッドライン(-1) → 폰목업(0) → サブテキスト+バッジ(1) */
   .mv__text-block { align-items: flex-end; gap: 16px; order: -1; flex: none; width: 100%; }
-  .mv__bottom { display: flex; flex-direction: column; align-items: center; gap: 24px; order: 1; flex: none; width: 100%; margin-top: 16px; }
   .mv__subtext { text-align: center; }
   .mv__subtext p { font-size: 16px; line-height: 2; letter-spacing: .1em; }
   .mv__headline { align-items: flex-end; }

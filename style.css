@@ -505,7 +505,14 @@ ul { list-style: none; }
 .news__more-icon { width: 30px; height: 30px; transform: rotate(90deg); }
 
 /* === BANNERS === */
-.banners { background: #f9f9f9; padding: clamp(40px,6vw,100px) 0; position: relative; overflow: hidden; }
+.banners {
+  background: #f9f9f9;
+  background-image: radial-gradient(circle, #c8c8c8 1px, transparent 1px);
+  background-size: 20px 20px;
+  padding: clamp(40px,6vw,100px) 0;
+  position: relative;
+  overflow: hidden;
+}
 .banners__inner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--gutter); display: flex; flex-direction: row; gap: clamp(20px,4vw,74px); justify-content: center; align-items: center; }
 .banners__item { display: block; flex-shrink: 0; }
 .banners__img { width: clamp(260px,33vw,480px); height: clamp(170px,22vw,320px); object-fit: cover; border-radius: 10px; display: block; }

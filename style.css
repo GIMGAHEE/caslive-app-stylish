@@ -287,6 +287,8 @@ ul { list-style: none; }
 .live__point-img--pink { border-left: clamp(4px,.7vw,10px) solid var(--color-accent-2); }
 .live__point-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .live__point-text { flex: 0 0 calc(50% - clamp(10px,1.5vw,30px)); min-width: 0; display: flex; flex-direction: column; gap: clamp(12px,1.5vw,20px); justify-content: center; }
+.live__point-header { display: flex; flex-direction: column; gap: clamp(12px,1.5vw,20px); }
+.live__point-body { display: flex; flex-direction: column; gap: clamp(12px,1.5vw,20px); }
 .live__point-tag { display: inline-block; background: var(--color-accent-2); color: #fff; font-size: clamp(11px,1vw,14px); font-weight: 700; padding: 2px 12px; align-self: flex-start; }
 .live__point-title { font-size: clamp(17px,2.2vw,30px); font-weight: 700; color: var(--color-accent-2); line-height: 1.4; }
 .live__point-desc { font-size: clamp(13px,1.2vw,16px); font-weight: 400; line-height: 1.75; color: #333; }
@@ -765,15 +767,17 @@ ul { list-style: none; }
     gap: 24px;
     margin: 0 auto;
   }
-  /* Figma: 이미지 위 / 텍스트 아래 */
+  /* SP順序: タグ+タイトル(order:-1) → 画像(order:0) → 説明(order:1) */
+  .live__point-header { order: -1; flex: none; width: 340px; max-width: 100%; display: flex; flex-direction: column; gap: 10px; }
   .live__point-img {
-    order: -1; flex: none;
+    order: 0; flex: none;
     width: 340px; max-width: 100%;
     min-height: 260px; height: 260px;
     border-left-width: 5px;
   }
   .live__point-img img { object-fit: cover; width: 100%; height: 100%; }
-  .live__point-text { order: 1; flex: none; width: 340px; max-width: 100%; gap: 10px; }
+  .live__point-body { order: 1; flex: none; width: 340px; max-width: 100%; display: flex; flex-direction: column; gap: 16px; }
+  .live__point-text { display: none; }
   .live__point-tag { font-size: 14px; padding: 2px 12px; }
   .live__point-title { font-size: 20px; }
   .live__point-desc { font-size: 16px; line-height: 1.75; }

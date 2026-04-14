@@ -694,36 +694,14 @@ ul { list-style: none; }
   .header__hamburger { display: flex; }
 
   /* ---- MV ---- */
-  .mv { min-height: unset; padding: 80px 25px 50px; overflow: hidden; }
-  .mv__content {
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    margin-top: 78px;
-  }
-  /* SP順序: ヘッドライン(-1) → 폰목업(0) → サブテキスト+バッジ(1) */
-  .mv__text-block { align-items: flex-end; gap: 16px; order: -1; flex: none; width: 100%; }
+  .mv { min-height: unset; padding: 80px var(--gutter) 40px; }
+  .mv__content { flex-direction: column-reverse; margin-top: 24px; }
+  .mv__movie-grid { width: min(280px,80vw); aspect-ratio: 661/660; }
+  .mv__text-block { align-items: center; }
+  .mv__headline { align-items: center; }
+  .mv__headline-row { justify-content: center; }
   .mv__subtext { text-align: center; }
-  .mv__subtext p { font-size: 16px; line-height: 2; letter-spacing: .1em; }
-  .mv__headline { align-items: flex-end; }
-  .mv__headline-row { justify-content: flex-end; }
-  .mv__text-img--left  { height: 71px; }
-  .mv__text-img--right { height: 73px; }
-  .mv__plain { font-size: 26px; }
-  .mv__subtext { text-align: center; }
-  .mv__subtext p { font-size: 16px; letter-spacing: .15em; line-height: 1.9; }
-  .mv__download { justify-content: center; gap: 8px; }
-  .mv__store-btn img { height: 54px; }
-  /* 폰 목업: 오른쪽으로 치우친 Figma 레이아웃 */
-  .mv__movie-grid {
-    width: min(340px, 88vw);
-    aspect-ratio: 661/660;
-    min-width: unset;
-    background: none;
-    border-radius: 0;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  .mv__download { justify-content: center; }
 
   /* ---- About ---- */
   .about { padding: 40px 0; }

@@ -183,15 +183,16 @@ ul { list-style: none; }
   width: 100%;
   height: clamp(60px, 8vw, 120px);
   position: relative;
+  overflow: hidden;
 }
+/* about(EFF8FF) → users(white): EFF8FF 배경에 흰 삼각形 */
 .connector--about-to-user {
   background: var(--color-base-1);
 }
 .connector--about-to-user::after {
   content: '';
   position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 100%;
+  inset: 0;
   background: #fff;
   clip-path: polygon(0 0, 50% 100%, 100% 0);
 }
@@ -268,12 +269,12 @@ ul { list-style: none; }
   height: clamp(60px, 8vw, 120px);
   background: #fff;
   position: relative;
+  overflow: hidden;
 }
 .live__wave::after {
   content: '';
   position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 100%;
+  inset: 0;
   background: var(--color-base-1);
   clip-path: polygon(0 0, 50% 100%, 100% 0);
 }

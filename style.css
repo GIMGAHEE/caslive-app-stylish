@@ -702,8 +702,9 @@ ul { list-style: none; }
     gap: 40px;
     margin-top: 28px;
   }
-  /* テキスト上 */
+  /* SP順序: ヘッドライン(-1) → 폰목업(0) → サブテキスト+バッジ(1) */
   .mv__text-block { align-items: center; gap: 16px; order: -1; flex: none; width: 100%; }
+  .mv__bottom { display: flex; flex-direction: column; align-items: center; gap: 24px; order: 1; flex: none; width: 100%; }
   .mv__headline { align-items: center; }
   .mv__headline-row { justify-content: center; }
   .mv__text-img--left  { height: 71px; }

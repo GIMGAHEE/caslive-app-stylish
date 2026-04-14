@@ -197,7 +197,7 @@ ul { list-style: none; }
 }
 
 /* === USERS === */
-.users { background: #fff; padding: var(--section-y) 0; }
+.users { background: #fff; padding: var(--section-y) 0; overflow: visible; }
 .users__flow {
   max-width: 1290px; margin: 0 auto; padding: 0 var(--gutter);
   display: flex; align-items: flex-start; justify-content: center;
@@ -207,18 +207,59 @@ ul { list-style: none; }
 .users__label { font-size: clamp(22px,3.2vw,46px); font-weight: 900; color: #fff; padding: 4px clamp(14px,2vw,30px); white-space: nowrap; }
 .users__label--liver  { background: var(--color-main); }
 .users__label--viewer { background: var(--color-main-2); }
-.users__img-grid { position: relative; width: 100%; display: flex; justify-content: center; }
-.users__app-img { width: 100%; max-width: 339px; border-radius: 16px; }
-.users__badge { position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: center; width: clamp(70px,7vw,120px); height: clamp(70px,7vw,120px); }
-.users__badge img { position: absolute; width: 100%; height: 100%; object-fit: contain; }
-.users__badge span { position: relative; z-index: 1; font-size: clamp(11px,1.2vw,18px); font-weight: 500; text-align: center; line-height: 1.4; }
+
+/* 画像 + バッジの横並びラッパー */
+.users__img-wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+}
+.users__app-img {
+  width: clamp(200px, 26vw, 339px);
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+/* バッジ: 画像の左右に配置 */
+.users__badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  width: clamp(70px, 8vw, 120px);
+  height: clamp(70px, 8vw, 120px);
+}
+.users__badge img {
+  position: absolute;
+  width: 100%; height: 100%;
+  object-fit: contain;
+}
+.users__badge span {
+  position: relative; z-index: 1;
+  font-size: clamp(10px, 1.1vw, 16px);
+  font-weight: 500; text-align: center; line-height: 1.4;
+}
 .users__badge--blue span   { color: var(--color-main); }
 .users__badge--purple span { color: var(--color-main-2); }
-.users__badge--left  { left: -10px; top: 28%; }
-.users__badge--right { right: -10px; top: 48%; }
+/* 左バッジは右寄せ、右バッジは左寄せ */
+.users__badge--left  { margin-right: clamp(4px, 1vw, 16px); }
+.users__badge--right { margin-left: clamp(4px, 1vw, 16px); }
+
 .users__desc { font-size: clamp(13px,1.1vw,18px); font-weight: 500; line-height: 2; max-width: 340px; text-align: justify; color: var(--color-text-sub); }
-.users__divider { flex-shrink: 0; width: 2px; align-self: stretch; min-height: 300px; opacity: .25; }
-.users__divider img { width: 2px; height: 100%; object-fit: cover; transform: rotate(90deg); }
+
+/* 中央区切り線: CSS で */
+.users__divider {
+  flex-shrink: 0; width: 2px; align-self: stretch; min-height: 400px;
+  background: #CBCBCB; opacity: .3; margin-top: 60px;
+}
 
 /* === LIVE === */
 .live { background: var(--color-base-1); padding: 0 0 var(--section-y); }
@@ -393,7 +434,8 @@ ul { list-style: none; }
   /* Users */
   .users__flow { flex-direction: column; }
   .users__divider { display: none; }
-  .users__img-grid { padding: 0 40px; }
+  .users__badge { width: 60px; height: 60px; }
+  .users__badge span { font-size: 10px; }
 
   /* Live */
   .live__point { flex-direction: column; }

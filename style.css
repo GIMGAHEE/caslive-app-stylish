@@ -218,24 +218,27 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(80px, 8vw, 130px);
-  height: clamp(80px, 8vw, 130px);
+  width: clamp(100px, 9vw, 146px);
+  height: clamp(100px, 9vw, 146px);
+  border-radius: 50%;
+  /* Glass effect */
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(8px) saturate(1.4);
+  -webkit-backdrop-filter: blur(8px) saturate(1.4);
+  /* Stroke: 白3px outside */
+  outline: 3px solid rgba(255,255,255,0.9);
+  /* Drop shadow */
+  box-shadow: 0 0 15.5px rgba(0,0,0,0.14), inset 0 1px 2px rgba(255,255,255,0.6);
   z-index: 2;
 }
-.users__badge img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
+.users__badge img { display: none; }
 .users__badge span {
   position: relative;
   z-index: 1;
-  font-size: clamp(11px, 1.1vw, 16px);
+  font-size: clamp(12px, 1.1vw, 17px);
   font-weight: 500;
   text-align: center;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 .users__badge--blue span   { color: var(--color-main); }
 .users__badge--purple span { color: var(--color-main-2); }

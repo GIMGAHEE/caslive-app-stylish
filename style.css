@@ -146,6 +146,12 @@ ul { list-style: none; }
   gap: clamp(20px,3.5vw,65px);
   align-items: flex-end;
 }
+/* PC: mv__bottom은 text-blockのflex columnの一部 */
+.mv__bottom {
+  display: flex; flex-direction: column;
+  gap: clamp(20px,3.5vw,65px);
+  align-items: flex-end;
+}
 /* PC: mv__bottom은 mv__text-block의 일부として扱う */
 .mv__bottom {
   display: contents;
@@ -694,14 +700,43 @@ ul { list-style: none; }
   .header__hamburger { display: flex; }
 
   /* ---- MV ---- */
-  .mv { min-height: unset; padding: 80px var(--gutter) 40px; }
-  .mv__content { flex-direction: column-reverse; margin-top: 24px; }
-  .mv__movie-grid { width: min(280px,80vw); aspect-ratio: 661/660; }
-  .mv__text-block { align-items: center; }
-  .mv__headline { align-items: center; }
-  .mv__headline-row { justify-content: center; }
+  .mv { min-height: unset; padding: 80px 25px 50px; }
+  /* SP: gridで順序を制御 headline(1) → movie(2) → bottom(3) */
+  .mv__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 32px;
+    margin-top: 24px;
+    justify-items: center;
+  }
+  .mv__text-block {
+    grid-row: 1;
+    width: 100%;
+    align-items: flex-end;
+    gap: 0;
+  }
+  .mv__movie-grid {
+    grid-row: 2;
+    width: min(300px, 88vw);
+    aspect-ratio: 661/660;
+    margin: 0 auto;
+  }
+  .mv__bottom {
+    grid-row: 3;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+  }
+  .mv__headline { align-items: flex-end; }
+  .mv__headline-row { justify-content: flex-end; }
+  .mv__text-img--left  { height: 71px; }
+  .mv__text-img--right { height: 73px; }
+  .mv__plain { font-size: 26px; }
   .mv__subtext { text-align: center; }
-  .mv__download { justify-content: center; }
+  .mv__subtext p { font-size: 16px; line-height: 2; letter-spacing: .1em; }
+  .mv__download { justify-content: center; gap: 8px; }
+  .mv__store-btn img { height: 54px; }
 
   /* ---- About ---- */
   .about { padding: 40px 0; }

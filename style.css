@@ -57,12 +57,20 @@ ul { list-style: none; }
 }
 
 /* ============================================
-   HEADER
+   HEADER (fixed)
    ============================================ */
 .header {
-  position: relative;
-  z-index: 10;
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 100;
   padding: 0 50px;
+  transition: top .3s;
+}
+.header.scrolled .header__inner {
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
 }
 .header__inner {
   background: #1A1A1A;
@@ -74,6 +82,7 @@ ul { list-style: none; }
   padding: 0 60px;
   max-width: var(--max-width);
   margin: 0 auto;
+  transition: background .3s;
 }
 .header__logo { flex-shrink: 0; }
 .header__logo-img { height: 41px; width: auto; }
@@ -106,20 +115,34 @@ ul { list-style: none; }
 }
 
 /* ============================================
-   MV
+   MV (PR動画)
    ============================================ */
 .mv {
   position: relative;
-  background: var(--color-main);
-  padding: 40px 50px 80px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  min-height: 860px;
+  padding-top: 123px; /* header height + top */
 }
-.mv__bg {
+.mv__video {
   position: absolute;
   inset: 0;
-  background: url('https://www.figma.com/api/mcp/asset/b7b411d7-b4e4-43f6-aa00-f5fe915bf57f') center/cover no-repeat;
-  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.mv__video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.3) 0%,
+    rgba(0,153,250,0.25) 50%,
+    rgba(0,0,0,0.5) 100%
+  );
+  z-index: 1;
 }
 .mv__content {
   position: relative;
@@ -129,7 +152,9 @@ ul { list-style: none; }
   justify-content: space-between;
   gap: 60px;
   max-width: var(--max-width);
-  margin: 48px auto 0;
+  margin: 40px auto 0;
+  padding: 0 50px 80px;
+  flex: 1;
 }
 .mv__mockups {
   position: relative;
@@ -650,7 +675,7 @@ ul { list-style: none; }
   }
 
   /* Header */
-  .header { padding: 0 20px; }
+  .header { top: 12px; padding: 0 16px; }
   .header__inner {
     height: 59px;
     padding: 0 28px;
@@ -663,12 +688,14 @@ ul { list-style: none; }
     flex-direction: column;
     position: fixed;
     top: 0; left: 0; right: 0;
-    background: #1a1a1a;
-    padding: 80px 30px 30px;
-    z-index: 100;
+    background: rgba(26,26,26,0.97);
+    backdrop-filter: blur(10px);
+    padding: 90px 30px 30px;
+    z-index: 99;
     gap: 4px;
   }
-  .header__hamburger { display: flex; }
+  .header__hamburger { display: flex; z-index: 101; position: relative; }
+  .mv { padding-top: 83px; }
 
   /* MV */
   .mv {
@@ -733,14 +760,26 @@ ul { list-style: none; }
 }
 
 /* ============================================
-   ANIMATIONS
+   SCROLL ANIMATIONS
    ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* stagger delays */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.fade-in-up {
-  opacity: 0;
-  animation: fadeInUp .6s ease forwards;
-}
-.fade-in-up.visible { animation-play-state: running; }

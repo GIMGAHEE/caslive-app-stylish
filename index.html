@@ -11,26 +11,31 @@
 </head>
 <body>
 
-  <!-- ===== MV ===== -->
-  <section class="mv" id="top">
-    <div class="mv__bg"></div>
-    <header class="header">
-      <div class="header__inner">
-        <div class="header__logo">
-          <img src="https://www.figma.com/api/mcp/asset/02b7849e-2306-43fd-ad1d-2f97de9104af" alt="CasLive" class="header__logo-img" />
-        </div>
-        <nav class="header__nav" id="headerNav">
-          <a href="#about" class="header__nav-link">CasLiveとは？</a>
-          <a href="#live" class="header__nav-link">推しとリアルタイム交流</a>
-          <a href="#commerce" class="header__nav-link">ライブコマース</a>
-          <a href="#features" class="header__nav-link">近日公開新機能</a>
-          <a href="#news" class="header__nav-link">新着情報</a>
-        </nav>
-        <button class="header__hamburger" id="hamburger" aria-label="メニュー">
-          <span></span><span></span><span></span>
-        </button>
+  <!-- ===== HEADER (fixed) ===== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <div class="header__logo">
+        <img src="logo.svg" alt="CasLive" class="header__logo-img" />
       </div>
-    </header>
+      <nav class="header__nav" id="headerNav">
+        <a href="#about" class="header__nav-link">CasLiveとは？</a>
+        <a href="#live" class="header__nav-link">推しとリアルタイム交流</a>
+        <a href="#commerce" class="header__nav-link">ライブコマース</a>
+        <a href="#features" class="header__nav-link">近日公開新機能</a>
+        <a href="#news" class="header__nav-link">新着情報</a>
+      </nav>
+      <button class="header__hamburger" id="hamburger" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== MV (PR動画) ===== -->
+  <section class="mv" id="top">
+    <video class="mv__video" autoplay muted loop playsinline>
+      <source src="pr-video.mp4" type="video/mp4" />
+    </video>
+    <div class="mv__video-overlay"></div>
 
     <div class="mv__content">
       <div class="mv__mockups">

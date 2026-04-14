@@ -10,45 +10,73 @@ if (hamburger && headerNav) {
   hamburger.addEventListener('click', () => {
     headerNav.classList.toggle('open');
   });
-  // Close nav on link click (mobile)
   headerNav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => headerNav.classList.remove('open'));
   });
 }
 
-// ---------- News tag filter ----------
-const tagButtons = document.querySelectorAll('.news__tag');
-const newsItems  = document.querySelectorAll('.news__item');
+// ---------- Header scroll behavior ----------
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+});
 
-tagButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    tagButtons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+// ---------- Scroll reveal ----------
+const revealSelectors = [
+  '.section-title', '.about__text',
+  '.users__item', '.point-card',
+  '.commerce__card', '.commerce__intro-box',
+  '.features__card', '.news__item',
+  '.download-cta__phone', '.download-cta__text', '.download-cta__buttons',
+  '.banners__img', '.mv__mockups', '.mv__text-block'
+];
+document.querySelectorAll(revealSelectors.join(',')).forEach(el => el.classList.add('reveal'));
 
-    const filter = btn.dataset.filter;
-    newsItems.forEach(item => {
-      if (filter === 'all' || item.dataset.category === filter) {
-        item.style.display = '';
-      } else {
-        item.style.display = 'none';
-      }
+// stagger
+[
+  ['.commerce__cards', '.commerce__card'],
+  ['.features__cards', '.features__card'],
+  ['.news__list',      '.news__item'],
+  ['.users__flow',     '.users__item'],
+].forEach(([parent, child]) => {
+  document.querySelectorAll(parent).forEach(container => {
+    container.querySelectorAll(child).forEach((el, i) => {
+      el.classList.add(`reveal-delay-${Math.min(i + 1, 5)}`);
     });
   });
 });
 
-// ---------- Scroll fade-in ----------
-const fadeEls = document.querySelectorAll(
-  '.point-card, .commerce__card, .features__card, .news__item, .about__text'
-);
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.animationDelay = `${i * 0.08}s`;
-      entry.target.classList.add('fade-in-up', 'visible');
+      entry.target.classList.add('visible');
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-fadeEls.forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ---------- News filter ----------
+document.querySelectorAll('.news__tag').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.news__tag').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.news__item').forEach(item => {
+      item.style.display = (filter === 'all' || item.dataset.category === filter) ? '' : 'none';
+    });
+  });
+});
+
+// ---------- Smooth scroll (fixed header offset) ----------
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const offset = (header?.offsetHeight || 100) + 20;
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+    }
+  });
+});

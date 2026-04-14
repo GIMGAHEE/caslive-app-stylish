@@ -239,6 +239,8 @@ ul { list-style: none; }
   font-weight: 700;
   text-align: center;
   line-height: 1.5;
+  -webkit-text-stroke: 2px #ffffff;
+  paint-order: stroke fill;
 }
 .users__badge--blue span   { color: var(--color-main); }
 .users__badge--purple span { color: var(--color-main-2); }

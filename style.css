@@ -666,10 +666,14 @@ ul { list-style: none; }
 }
 
 /* ============================================
-   RESPONSIVE ≤768px
+   RESPONSIVE ≤768px  (Figma SP デザイン準拠)
    ============================================ */
 @media (max-width: 768px) {
-  /* Header */
+
+  /* ---- Header ---- */
+  .header { top: 8px; padding: 0 16px; }
+  .header__inner { height: 59px; padding: 0 28px; border-radius: 100px; }
+  .header__logo-img { height: 26px; }
   .header__nav { display: none; }
   .header__nav.open {
     display: flex; flex-direction: column;
@@ -679,48 +683,240 @@ ul { list-style: none; }
   }
   .header__hamburger { display: flex; }
 
-  /* MV */
-  .mv { min-height: unset; padding: 80px var(--gutter) 40px; }
-  .mv__content { flex-direction: column-reverse; margin-top: 24px; }
-  .mv__movie-grid { width: min(280px,80vw); aspect-ratio: 661/660; }
-  .mv__text-block { align-items: center; }
+  /* ---- MV ---- */
+  .mv {
+    min-height: unset;
+    padding: 20px 25px 50px;
+  }
+  .mv__content {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin-top: 28px;
+  }
+  /* テキスト: 中央揃え、上に */
+  .mv__text-block {
+    align-items: center;
+    gap: 24px;
+    order: -1;
+  }
   .mv__headline { align-items: center; }
   .mv__headline-row { justify-content: center; }
+  .mv__text-img--left  { height: 72px; }
+  .mv__text-img--right { height: 74px; }
+  .mv__plain { font-size: 26px; }
   .mv__subtext { text-align: center; }
-  .mv__download { justify-content: center; }
+  .mv__subtext p { font-size: 16px; letter-spacing: .2em; }
+  .mv__download { justify-content: center; gap: 8px; }
+  .mv__store-btn img { height: 54px; }
+  /* 폰 목업 */
+  .mv__movie-grid {
+    width: min(340px, 88vw);
+    aspect-ratio: 661/660;
+  }
 
-  /* About */
-  .about__text { text-align: left; }
+  /* ---- About ---- */
+  .about { padding: 40px 0; }
+  .about .section-inner { max-width: 100%; padding: 0 25px; }
+  .section-title__en { font-size: 16px; }
+  .section-title__ja { font-size: 32px; }
+  .about__text { font-size: 14px; line-height: 2; text-align: left; max-width: 270px; }
 
-  /* Users */
-  .users__flow { flex-direction: column; }
-  .users__divider { display: none; }
-  .users__badge { width: 60px; height: 60px; }
-  .users__badge span { font-size: 10px; }
+  /* ---- Connector ---- */
+  .connector { overflow: hidden; }
 
-  /* Live */
-  .live__point { flex-direction: column; }
-  .live__point-img { flex: none; width: 100%; min-height: clamp(200px,55vw,320px); }
-  .live__point-text { flex: none; width: 100%; }
-  .live__divider { width: 70%; }
+  /* ---- Users ---- */
+  .users { padding: 40px 0; overflow: hidden; }
+  .users__flow { flex-direction: column; gap: 40px; }
+  .users__divider {
+    width: 300px; height: 2px; min-height: unset;
+    align-self: center; margin: 0;
+  }
+  .users__col { gap: 24px; }
+  .users__label { font-size: 32px; }
+  .users__app-img { width: min(227px, 58vw); }
+  /* バッジ サイズ調整 */
+  .users__badge {
+    width: 95px; height: 95px;
+    outline: 2px solid #fff;
+  }
+  .users__badge span { font-size: 14px; }
+  .users__badge--left  { left: -30px; top: 28%; }
+  .users__badge--right { right: -30px; top: 52%; }
+  .users__desc { font-size: 14px; max-width: 270px; }
 
-  /* Commerce */
-  .commerce__list-item, .commerce__list-item--reverse { flex-direction: column; padding: 24px 20px; }
-  .commerce__list-img { width: 100px; }
-  .commerce__intro-box { margin: 0 var(--gutter); }
+  /* ---- Live ---- */
+  .live { padding: 0 0 80px; }
+  .live__title { padding: 60px 25px 40px; }
+  .live__heading { font-size: 32px; text-align: center; }
+  .live__point {
+    flex-direction: column;
+    max-width: 390px;
+    padding: 0 25px 0;
+    gap: 24px;
+    margin-bottom: 51px;
+  }
+  .live__point-img {
+    flex: none; width: 340px; max-width: 100%;
+    min-height: 260px; height: 260px;
+    border-left-width: 5px;
+  }
+  .live__point-img img { object-fit: cover; }
+  .live__point-text { flex: none; width: 100%; gap: 16px; }
+  .live__point-tag { font-size: 14px; padding: 2px 12px; }
+  .live__point-title { font-size: 20px; }
+  .live__point-desc { font-size: 16px; }
+  .live__point-list { font-size: 14px; }
+  .live__divider {
+    width: 270px; max-width: 100%;
+    margin: 0 auto 51px;
+  }
 
-  /* Features */
-  .features__cards { grid-template-columns: 1fr; }
+  /* ---- Commerce ---- */
+  .commerce { padding: 80px 0; }
+  .commerce .section-inner { padding: 0 25px; }
+  .commerce__intro-box {
+    padding: 20px;
+    margin: 0;
+  }
+  .commerce__intro-heading { font-size: 20px; }
+  .commerce__intro-text { font-size: 14px; }
+  .commerce__list { gap: 28px; }
+  .commerce__card-row {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    width: 340px;
+    max-width: 100%;
+    gap: 20px;
+  }
+  .commerce__card-title { font-size: 20px; }
+  .commerce__card-desc { font-size: 18px; color: #fff; max-width: 270px; }
+  .commerce__card-img-wrap {
+    width: 270px; height: 526px;
+    margin: 0;
+  }
 
-  /* Download */
-  .download-cta__body { flex-direction: column; align-items: center; }
-  .download-cta__left { align-items: center; padding-bottom: 0; flex: none; width: 100%; max-width: 400px; }
-  .download-cta__text { text-align: left; }
-  .download-cta__phone-wrap { flex: none; width: min(320px, 80vw); }
+  /* ---- Features ---- */
+  .features { padding: 100px 0 0; }
+  .features .section-inner { padding: 0 25px; }
+  .features__cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  .features__card {
+    width: 340px; max-width: 100%;
+    min-height: unset;
+    gap: 20px;
+    padding: 40px 0;
+  }
+  .features__card-label { width: 270px; padding-left: 20px; }
+  .features__card-title { font-size: 20px; }
+  .features__card-mockups {
+    width: 270px; height: 303px;
+  }
+  .features__card-text { font-size: 18px; width: 270px; }
+  .features__note { font-size: 14px; }
+
+  /* ---- features → DL V字 ---- */
+  .features__wave svg { display: block; }
+  .download-cta__wave { position: absolute; top: 0; }
+
+  /* ---- DL セクション ---- */
+  .download-cta { padding: 80px 0; }
+  .download-cta__body {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 0 25px;
+  }
+  .download-cta__left { display: none; }
+  .download-cta__phone-wrap {
+    flex: none;
+    width: 270px;
+    order: 1;
+  }
+  .download-cta__phone { width: 100%; }
   .download-cta__divider { display: none; }
-  .download-cta__right { align-items: center; padding-bottom: 0; flex: none; }
+  .download-cta__right {
+    flex: none;
+    align-items: center;
+    padding-bottom: 0;
+    order: 2;
+    gap: 40px;
+    flex-direction: column;
+  }
+  /* モバイル: テキスト + アイコン + バッジ */
+  .download-cta__inner > .section-title { margin-bottom: 0; }
+  /* SP専用テキスト */
+  .download-cta__text {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    line-height: 2;
+    max-width: 270px;
+    padding: 0;
+  }
+  .download-cta__qr img { width: 120px; }
+  .download-cta__store-btn img { height: 54px; }
+  /* SP: アイコン + バッジ 横並び */
+  .download-cta__sp-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    justify-content: center;
+  }
+  .download-cta__icon {
+    width: 120px; height: 120px;
+    border-radius: 18px;
+  }
 
-  /* Footer */
-  .footer__nav { flex-direction: column; align-items: center; }
+  /* ---- News ---- */
+  .news { padding: 80px 0 100px; }
+  .news .section-inner { padding: 0 25px; max-width: 100%; }
+  .news__tags { justify-content: center; gap: 6px; }
+  .news__tag { font-size: 12px; height: 25px; padding: 4px 0; width: 80px; border-radius: 3px; }
+  .news__list { max-width: 340px; gap: 20px; }
+  .news__item { padding: 20px; border-radius: 20px; }
+  .news__item-title { font-size: 14px; }
+  .news__badge { width: 80px; font-size: 12px; height: 25px; }
+  .news__date { font-size: 12px; }
+
+  /* ---- Banners ---- */
+  .banners { padding: 80px 0; }
+  .banners__inner {
+    flex-direction: column;
+    gap: 40px;
+    max-width: 100%;
+    padding: 0 25px;
+    align-items: center;
+  }
+  .banners__item { width: 270px; }
+  .banners__img { width: 270px; height: 180px; }
+
+  /* ---- Footer ---- */
+  .footer { padding: 80px 30px; }
+  .footer__inner { padding: 0 20px; align-items: center; max-width: 100%; }
+  .footer__logo img { height: 57px; }
+  .footer__bottom { flex-direction: column; align-items: center; gap: 20px; }
+  .footer__nav { flex-direction: column; align-items: center; gap: 0; }
+  .footer__nav-link { font-size: 16px; text-align: center; }
+  .footer__copy { margin: 0; font-size: 12px; }
 }
 
+
+/* SP専用要素: PC非表示 */
+.download-cta__text--sp { display: none; }
+.download-cta__sp-row   { display: none; }
+
+@media (max-width: 768px) {
+  /* SP専用: テキストとアイコン行を表示 */
+  .download-cta__text--sp { display: block; }
+  .download-cta__sp-row   { display: flex; }
+  /* PC用左列・QR・区切り線は非表示 */
+  .download-cta__left     { display: none; }
+  .download-cta__divider  { display: none; }
+  .download-cta__right .download-cta__qr   { display: none; }
+  .download-cta__right .download-cta__stores { display: none; }
+}

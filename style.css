@@ -380,9 +380,11 @@ ul { list-style: none; }
   background-color: #f8f8f8;
   background-image: radial-gradient(circle, #c8c8c8 1px, transparent 1px);
   background-size: 20px 20px;
-  padding: var(--section-y) 0 clamp(20px,2vw,20px);
+  padding: var(--section-y) 0 clamp(80px,10vw,140px);
   position: relative;
   overflow: hidden;
+  /* 下部をV字にクリップ */
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - clamp(60px,8vw,110px)), 50% 100%, 0 calc(100% - clamp(60px,8vw,110px)));
 }
 .features__bg { display: none; }
 /* 3カラムグリッド */
@@ -467,29 +469,14 @@ ul { list-style: none; }
 .download-cta {
   background: linear-gradient(0deg, #7FCDFE 0%, #B99CE0 100%);
   padding: clamp(60px,8vw,80px) 0 clamp(60px,8vw,80px);
-  overflow: visible;
+  overflow: hidden;
   position: relative;
-}
-/* features→DL: featuresの白ドット背景で逆V字を作る */
-.download-cta::before {
-  content: '';
-  position: absolute;
-  top: clamp(-80px,-8vw,-40px);
-  left: 0; right: 0;
-  height: clamp(80px,10vw,120px);
-  background-color: #f8f8f8;
-  background-image: radial-gradient(circle, #c8c8c8 1px, transparent 1px);
-  background-size: 20px 20px;
-  clip-path: polygon(0 0, 50% 100%, 100% 0);
-  z-index: 2;
 }
 .download-cta__inner {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: clamp(40px,5vw,80px);
-  position: relative;
-  z-index: 3;
 }
 
 /* 3列ボディ */

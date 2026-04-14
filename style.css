@@ -391,7 +391,7 @@ ul { list-style: none; }
   bottom: 0; left: 0; right: 0;
   height: clamp(40px,6vw,80px);
   background: linear-gradient(0deg, #B99CE0 0%, #7FCDFE 100%);
-  clip-path: polygon(0 100%, 50% 0%, 100% 100%);
+  clip-path: polygon(0 0%, 50% 100%, 100% 0%);
 }
 .features__bg { display: none; }
 /* 3カラムグリッド */

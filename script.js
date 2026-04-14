@@ -105,3 +105,16 @@ if (mvVideo && mvPlayBtn) {
     }
   });
 }
+
+// ---------- 再生ボタン: サムネイル非表示 ----------
+const mvThumb = document.getElementById('mvThumb');
+if (mvThumb && mvPlayBtn) {
+  // 元のclickイベントにサムネイル非表示を追加
+  const origClick = mvPlayBtn.onclick;
+  mvPlayBtn.addEventListener('click', () => {
+    if (mvThumb) mvThumb.classList.add('hidden');
+  }, true);
+  mvVideo?.addEventListener('ended', () => {
+    if (mvThumb) mvThumb.classList.remove('hidden');
+  });
+}

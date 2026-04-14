@@ -406,6 +406,7 @@ ul { list-style: none; }
   overflow: hidden;
 }
 .features__bg { display: none; }
+.features .section-inner { max-width: 1290px; }
 .download-cta__wave {
   width: 100%;
   line-height: 0;
@@ -515,7 +516,7 @@ ul { list-style: none; }
   justify-content: center;
   gap: clamp(20px,4vw,60px);
   width: 100%;
-  max-width: 1200px;
+  max-width: 1290px;
   padding: 0 var(--gutter);
 }
 

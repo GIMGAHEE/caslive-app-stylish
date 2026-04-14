@@ -2,7 +2,7 @@
    CasLive LP - script.js
    ============================================ */
 
-// ---------- Hamburger menu ----------
+// ---------- Hamburger menu (PC) ----------
 const hamburger = document.getElementById('hamburger');
 const headerNav = document.getElementById('headerNav');
 
@@ -12,6 +12,38 @@ if (hamburger && headerNav) {
   });
   headerNav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => headerNav.classList.remove('open'));
+  });
+}
+
+// ---------- SP ドロワーメニュー ----------
+const spMenu        = document.getElementById('spMenu');
+const spMenuOverlay = document.getElementById('spMenuOverlay');
+const spMenuClose   = document.getElementById('spMenuClose');
+
+function openSpMenu() {
+  spMenuOverlay.style.display = 'block';
+  requestAnimationFrame(() => {
+    spMenuOverlay.classList.add('active');
+    spMenu.classList.add('open');
+  });
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSpMenu() {
+  spMenuOverlay.classList.remove('active');
+  spMenu.classList.remove('open');
+  document.body.style.overflow = '';
+  setTimeout(() => { spMenuOverlay.style.display = 'none'; }, 300);
+}
+
+if (hamburger && spMenu) {
+  hamburger.addEventListener('click', openSpMenu);
+}
+if (spMenuClose) spMenuClose.addEventListener('click', closeSpMenu);
+if (spMenuOverlay) spMenuOverlay.addEventListener('click', closeSpMenu);
+if (spMenu) {
+  spMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeSpMenu);
   });
 }
 

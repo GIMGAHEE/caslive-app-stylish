@@ -83,9 +83,12 @@ ul { list-style: none; }
 .mv__movie-grid {
   position: relative;
   flex-shrink: 0;
-  /* 661:660 比率でスケール */
   width: clamp(260px,38vw,580px);
   aspect-ratio: 661/660;
+  /* 画像ロード失敗時もスペース確保 */
+  min-width: clamp(260px,38vw,580px);
+  background: rgba(255,255,255,0.08);
+  border-radius: clamp(18px,3vw,40px);
 }
 /* app2: right ml=458.9/661=69.4% top=142.35/660=21.6% w=202/661=30.6% h=358/660=54.2% */
 .mv__app2 {

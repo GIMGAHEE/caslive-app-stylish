@@ -146,6 +146,13 @@ ul { list-style: none; }
   gap: clamp(20px,3.5vw,65px);
   align-items: flex-end;
 }
+/* PC: mv__bottom은 mv__text-block의 일부として扱う */
+.mv__bottom {
+  flex: none;
+  display: flex; flex-direction: column;
+  gap: clamp(20px,3.5vw,65px);
+  align-items: flex-end;
+}
 .mv__headline {
   display: flex; flex-direction: column; align-items: flex-end;
 }

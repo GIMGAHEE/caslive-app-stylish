@@ -115,15 +115,12 @@ ul { list-style: none; }
 }
 
 /* ============================================
-   MV (PR動画)
+   MV (PR動画 全画面)
    ============================================ */
 .mv {
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  height: 100vh;
   overflow: hidden;
-  padding-top: 123px; /* header height + top */
 }
 .mv__video {
   position: absolute;
@@ -138,24 +135,58 @@ ul { list-style: none; }
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.3) 0%,
-    rgba(0,153,250,0.25) 50%,
-    rgba(0,0,0,0.5) 100%
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.1) 50%,
+    rgba(0,0,0,0.45) 100%
   );
   z-index: 1;
 }
 .mv__content {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 2;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-  max-width: var(--max-width);
-  margin: 40px auto 0;
-  padding: 0 50px 80px;
-  flex: 1;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 60px 80px;
+  max-width: 100%;
 }
+.mv__text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-end;
+}
+.mv__headline { text-align: right; }
+.mv__headline-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  line-height: 1.05;
+}
+.mv__headline-img { height: 110px; filter: drop-shadow(0 2px 12px rgba(0,0,0,0.3)); }
+.mv__headline-plain {
+  color: #EFF8FF;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+.mv__subtext { text-align: right; }
+.mv__subtext p {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  line-height: 1.9;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+}
+.mv__download {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.mv__store-btn img { height: 56px; width: auto; }
 .mv__mockups {
   position: relative;
   flex-shrink: 0;
@@ -695,7 +726,17 @@ ul { list-style: none; }
     gap: 4px;
   }
   .header__hamburger { display: flex; z-index: 101; position: relative; }
-  .mv { padding-top: 83px; }
+  .mv { height: 100svh; }
+  .mv__content { padding: 40px 28px; align-items: flex-end; justify-content: center; }
+  .mv__text-block { align-items: center; gap: 20px; }
+  .mv__headline { text-align: center; }
+  .mv__headline-row { justify-content: center; }
+  .mv__headline-img { height: 70px; }
+  .mv__headline-plain { font-size: 26px; }
+  .mv__subtext { text-align: center; }
+  .mv__subtext p { font-size: 15px; }
+  .mv__download { justify-content: center; flex-wrap: wrap; }
+  .mv__store-btn img { height: 48px; }
 
   /* MV */
   .mv {

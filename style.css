@@ -467,16 +467,105 @@ ul { list-style: none; }
 .features__note { text-align: right; font-size: clamp(12px,1.1vw,20px); color: rgba(26,26,26,.5); margin-top: 16px; padding-right: clamp(0px,2vw,20px); }
 
 /* === DOWNLOAD CTA === */
-.download-cta { background: linear-gradient(180deg,#B99CE0 0%,#7FCDFE 100%); padding: var(--section-y) 0; }
-.download-cta__inner { display: flex; flex-direction: column; align-items: center; gap: clamp(24px,3vw,40px); }
-.download-cta__phone { width: clamp(140px,18vw,240px); }
-.download-cta__text { text-align: center; color: #fff; max-width: 500px; padding: 0 var(--gutter); }
-.download-cta__text p { font-size: clamp(13px,1.1vw,14px); line-height: 2; font-weight: 500; }
-.download-cta__text p:first-child { font-size: clamp(15px,1.5vw,18px); font-weight: 700; margin-bottom: 12px; }
-.download-cta__buttons { display: flex; align-items: center; gap: clamp(20px,3vw,40px); flex-wrap: wrap; justify-content: center; }
-.download-cta__qr img { width: clamp(80px,10vw,120px); height: auto; border-radius: 18px; }
-.download-cta__stores { display: flex; flex-direction: column; gap: 10px; }
-.download-cta__stores .mv__store-btn img { height: clamp(44px,5vw,54px); }
+.download-cta {
+  background: linear-gradient(0deg, #7FCDFE 0%, #B99CE0 100%);
+  padding: clamp(60px,8vw,80px) 0 clamp(60px,8vw,80px);
+  overflow: hidden;
+}
+.download-cta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(40px,5vw,80px);
+}
+
+/* 3列ボディ */
+.download-cta__body {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(20px,4vw,60px);
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 var(--gutter);
+}
+
+/* 左列: アイコン + テキスト */
+.download-cta__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(24px,4vw,60px);
+  flex: 0 0 clamp(220px,24vw,352px);
+  padding-bottom: clamp(40px,7vw,90px);
+}
+.download-cta__icon {
+  width: clamp(120px,14vw,225px);
+  height: clamp(120px,14vw,225px);
+  border-radius: clamp(24px,4vw,50px);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.download-cta__text {
+  color: #fff;
+  font-size: clamp(13px,1.3vw,22px);
+  font-weight: 500;
+  line-height: 1.73;
+}
+.download-cta__catch {
+  font-size: clamp(15px,1.5vw,22px);
+  font-weight: 500;
+  line-height: 1.73;
+  margin-bottom: 0;
+}
+
+/* 中央列: スマホ画像 */
+.download-cta__phone-wrap {
+  flex: 0 0 clamp(200px,30vw,459px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.download-cta__phone {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* 区切り線 */
+.download-cta__divider {
+  flex-shrink: 0;
+  width: 2px;
+  align-self: stretch;
+  background: rgba(255,255,255,0.5);
+  min-height: 300px;
+}
+
+/* 右列: QR + バッジ */
+.download-cta__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(24px,5vw,76px);
+  flex: 0 0 auto;
+  padding-bottom: clamp(40px,7vw,99px);
+}
+.download-cta__qr img {
+  width: clamp(140px,16vw,226px);
+  height: auto;
+  display: block;
+}
+.download-cta__stores {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px,1.2vw,16px);
+}
+.download-cta__store-btn img {
+  height: clamp(44px,6vw,88px);
+  width: auto;
+  display: block;
+}
 
 /* === NEWS === */
 .news { background: #fff; padding: var(--section-y) 0; }
@@ -593,7 +682,12 @@ ul { list-style: none; }
   .features__cards { grid-template-columns: 1fr; }
 
   /* Download */
-  .download-cta__buttons { flex-direction: column; gap: 16px; }
+  .download-cta__body { flex-direction: column; align-items: center; }
+  .download-cta__left { align-items: center; padding-bottom: 0; flex: none; width: 100%; max-width: 400px; }
+  .download-cta__text { text-align: left; }
+  .download-cta__phone-wrap { flex: none; width: min(320px, 80vw); }
+  .download-cta__divider { display: none; }
+  .download-cta__right { align-items: center; padding-bottom: 0; flex: none; }
 
   /* Footer */
   .footer__nav { flex-direction: column; align-items: center; }

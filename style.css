@@ -767,17 +767,20 @@ ul { list-style: none; }
     gap: 24px;
     margin: 0 auto;
   }
-  /* SP順序: タグ+タイトル(-1) → 画像(0) → 説明(1) */
-  .live__point-text { order: -1; flex: none; width: 340px; max-width: 100%; display: flex; flex-direction: column; gap: 0; }
-  .live__point-header { order: -1; gap: 10px; }
-  .live__point-body { order: 1; gap: 16px; }
-  .live__point-img {
-    order: 0; flex: none;
+  /* SP순서: タグ+タイトル → 画像 → 説明 (grid使用) */
+  .live__point {
+    display: grid;
+    grid-template-areas: "header" "img" "body";
     width: 340px; max-width: 100%;
-    min-height: 260px; height: 260px;
-    border-left-width: 5px;
+    padding: 0 25px;
+    gap: 24px;
+    margin: 0 auto;
   }
+  .live__point-text { display: contents; }
+  .live__point-header { grid-area: header; display: flex; flex-direction: column; gap: 10px; }
+  .live__point-img { grid-area: img; flex: none; width: 100%; min-height: 260px; height: 260px; border-left-width: 5px; }
   .live__point-img img { object-fit: cover; width: 100%; height: 100%; }
+  .live__point-body { grid-area: body; display: flex; flex-direction: column; gap: 16px; }
   .live__point-tag { font-size: 14px; padding: 2px 12px; }
   .live__point-title { font-size: 20px; }
   .live__point-desc { font-size: 16px; line-height: 1.75; }

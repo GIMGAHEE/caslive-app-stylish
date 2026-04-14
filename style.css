@@ -771,7 +771,7 @@ ul { list-style: none; }
   .live__point {
     display: grid;
     grid-template-areas: "header" "img" "body";
-    width: 340px; max-width: 100%;
+    max-width: 100%;
     padding: 0 25px;
     gap: 24px;
     margin: 0 auto;

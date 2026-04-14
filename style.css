@@ -631,8 +631,8 @@ ul { list-style: none; }
   overflow: hidden;
 }
 .banners__inner { width: 100%; max-width: 1290px; margin: 0 auto; padding: 0 var(--gutter); display: flex; flex-direction: row; gap: clamp(16px,2vw,40px); justify-content: center; align-items: center; box-sizing: border-box; }
-.banners__item { display: block; flex-shrink: 0; }
-.banners__img { flex: 1; min-width: 0; height: clamp(170px,22vw,320px); object-fit: cover; border-radius: 10px; display: block; }
+.banners__item { display: block; flex: 1; min-width: 0; }
+.banners__img { width: 100%; height: clamp(170px,22vw,320px); object-fit: cover; border-radius: 10px; display: block; }
 
 /* === FOOTER === */
 .footer { background: #1A1A1A; padding: clamp(40px,5vw,60px) clamp(20px,2vw,30px); }

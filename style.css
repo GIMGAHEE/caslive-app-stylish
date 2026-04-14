@@ -119,82 +119,97 @@ ul { list-style: none; }
    ============================================ */
 .mv {
   position: relative;
-  background: var(--color-main);
+  background: #0099FA;
   padding: 40px 50px 80px;
   overflow: hidden;
-  min-height: 860px;
+  min-height: 900px;
 }
+/* 背景レイヤー */
 .mv__bg {
   position: absolute;
   inset: 0;
-  background: url('https://www.figma.com/api/mcp/asset/b7b411d7-b4e4-43f6-aa00-f5fe915bf57f') center/cover no-repeat;
-  opacity: 0.6;
+  z-index: 0;
 }
+.mv__bg-img1 {
+  position: absolute;
+  height: 100%;
+  left: -24.21%;
+  top: 0;
+  width: 124.2%;
+  object-fit: cover;
+}
+.mv__bg-img2 {
+  position: absolute;
+  height: 100%;
+  left: -41.26%;
+  top: 0;
+  width: 185.16%;
+  object-fit: cover;
+  opacity: 0.36;
+}
+/* メインコンテンツ */
 .mv__content {
   position: relative;
   z-index: 2;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 60px;
   max-width: var(--max-width);
   margin: 48px auto 0;
 }
 
-/* --- 左側: スマホ目安 --- */
-.mv__mockups {
+/* ============================================
+   movie/image グリッド (Figma準拠)
+   ============================================ */
+.mv__movie-grid {
   position: relative;
   flex-shrink: 0;
-  width: 580px;
-  height: 620px;
+  /* Figma: 全体幅 = ml[458.9] + w[202] = 660.9px, 高さ = h[642] */
+  width: 661px;
+  height: 660px;
 }
-/* 一番後ろ（右上） */
-.mv__mockup--back {
+/* app_1080x1920-2: ml=458.9px mt=142.35px w=202px h=358px */
+.mv__app2 {
   position: absolute;
-  width: 190px;
-  border-radius: 26px;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  object-fit: cover;
-  transform: rotate(3deg);
-}
-/* 真ん中 */
-.mv__mockup--mid {
-  position: absolute;
-  width: 250px;
+  left: 459px;
+  top: 142px;
+  width: 202px;
+  height: 358px;
   border-radius: 30px;
-  top: 60px;
-  left: 160px;
-  z-index: 2;
   object-fit: cover;
-  transform: rotate(1deg);
+  z-index: 1;
 }
-/* メインフレーム（動画入り） - 一番前・左 */
-.mv__phone-wrap {
+/* app_1080x1920-1: ml=252.84px mt=81.63px w=269px h=478px */
+.mv__app1 {
+  position: absolute;
+  left: 253px;
+  top: 82px;
+  width: 269px;
+  height: 478px;
+  border-radius: 34px;
+  object-fit: cover;
+  z-index: 2;
+}
+/* メインフレーム: ml=0 mt=0 w=360px h=642px 白枠 */
+.mv__main-frame {
   position: absolute;
   left: 0;
-  top: 40px;
-  width: 270px;
+  top: 0;
+  width: 360px;
+  height: 642px;
+  border-radius: 40px;
+  border: 3px solid #fff;
   z-index: 3;
+  overflow: hidden;
+  background: #cbcbcb;
 }
-.mv__phone-frame {
-  width: 100%;
-  display: block;
-  position: relative;
-  z-index: 2;
-  pointer-events: none;
-}
+/* 動画エリア（フレーム全体） */
 .mv__phone-video-area {
   position: absolute;
-  top: 3%;
-  left: 3.5%;
-  right: 3.5%;
-  bottom: 12%;
-  border-radius: 28px;
+  inset: 0;
+  border-radius: 40px;
   overflow: hidden;
-  z-index: 1;
-  background: #000;
 }
 .mv__phone-video {
   width: 100%;
@@ -202,45 +217,60 @@ ul { list-style: none; }
   object-fit: cover;
   display: block;
 }
+/* 再生ボタン: Circular Element ml=107.51 mt=248.87 w=145px h=145px */
 .mv__play-btn {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90px;
-  height: 90px;
+  left: 107px;
+  top: 249px;
+  width: 145px;
+  height: 145px;
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 3;
+  z-index: 4;
+  padding: 0;
   transition: transform 0.2s, opacity 0.3s;
 }
-.mv__play-btn img { width: 100%; height: 100%; object-fit: contain; }
-.mv__play-btn:hover { transform: translate(-50%, -50%) scale(1.1); }
+.mv__play-btn img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.mv__play-btn:hover { transform: scale(1.08); }
 .mv__play-btn.hidden { opacity: 0; pointer-events: none; }
 
-/* --- 右側: テキスト --- */
+/* ============================================
+   右側: テキスト/ボタン
+   ============================================ */
 .mv__text-block {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 65px;
   align-items: flex-end;
 }
-.mv__headline { text-align: right; }
-.mv__headline-row {
+.mv__headline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0;
+}
+/* 1行目: 気持ち画像 + を、 */
+.mv__headline-line1,
+.mv__headline-line2,
+.mv__headline-line3 {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  line-height: 1.05;
+  line-height: 1;
 }
-.mv__headline-img { height: 110px; }
-.mv__headline-plain {
+.mv__text-img--left  { height: 117px; width: 278px; }
+.mv__text-img--right { height: 120px; width: 308px; }
+.mv__plain {
   color: #EFF8FF;
   font-size: 42px;
   font-weight: 700;
   line-height: 1;
+  margin-top: 42px;
 }
+.mv__headline-line3 .mv__plain:first-child { margin-top: 52px; }
+.mv__headline-line3 .mv__plain:last-child  { margin-top: 52px; }
 .mv__subtext { text-align: right; }
 .mv__subtext p {
   color: #fff;
@@ -249,76 +279,7 @@ ul { list-style: none; }
   letter-spacing: 0.2em;
   line-height: 1.8;
 }
-.mv__download { display: flex; gap: 10px; align-items: center; }
-.mv__store-btn img { height: 60px; width: auto; }
-.mv__mockups {
-  position: relative;
-  flex-shrink: 0;
-  width: 660px;
-  height: 660px;
-}
-.mv__mockup { position: absolute; object-fit: cover; }
-.mv__mockup--back {
-  width: 202px;
-  border-radius: 30px;
-  bottom: 40px;
-  right: 0;
-}
-.mv__mockup--mid {
-  width: 269px;
-  border-radius: 34px;
-  bottom: 80px;
-  left: 130px;
-}
-.mv__mockup-main { position: absolute; left: 0; bottom: 0; }
-.mv__mockup--front {
-  width: 360px;
-  border-radius: 40px;
-  border: 3px solid #fff;
-  display: block;
-}
-.mv__circular {
-  position: absolute;
-  width: 145px;
-  bottom: 240px;
-  right: -60px;
-}
-.mv__text-block {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  align-items: flex-end;
-}
-.mv__headline { text-align: right; }
-.mv__headline-row {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  line-height: 1.05;
-}
-.mv__headline-img { height: 110px; }
-.mv__headline-plain {
-  color: #EFF8FF;
-  font-size: 42px;
-  font-weight: 700;
-  line-height: 1;
-}
-.mv__subtext {
-  text-align: right;
-}
-.mv__subtext p {
-  color: #fff;
-  font-size: 22px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  line-height: 1.8;
-}
-.mv__download {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
+.mv__download { display: flex; gap: 9px; align-items: flex-start; }
 .mv__store-btn img { height: 60px; width: auto; }
 
 /* ============================================
@@ -792,46 +753,22 @@ ul { list-style: none; }
   .header__hamburger { display: flex; z-index: 101; position: relative; }
   /* MV */
   .mv { padding: 20px 20px 50px; min-height: unset; }
-  .mv__content { flex-direction: column; gap: 32px; margin-top: 32px; }
-  .mv__mockups { width: 100%; height: 380px; }
-  .mv__phone-wrap { width: 160px; left: 0; bottom: 0; }
-  .mv__mockup--mid { width: 140px; left: 100px; bottom: 40px; }
-  .mv__mockup--back { width: 104px; right: 30px; bottom: 20px; }
-  .mv__play-btn { width: 56px; height: 56px; }
+  .mv__content { flex-direction: column-reverse; gap: 32px; margin-top: 32px; }
+  .mv__movie-grid { width: 330px; height: 320px; }
+  .mv__app2 { left: 224px; top: 70px; width: 98px; height: 174px; border-radius: 14px; }
+  .mv__app1 { left: 123px; top: 40px; width: 131px; height: 233px; border-radius: 16px; }
+  .mv__main-frame { width: 175px; height: 312px; border-radius: 20px; }
+  .mv__play-btn { left: 52px; top: 121px; width: 70px; height: 70px; }
   .mv__text-block { align-items: center; gap: 20px; }
-  .mv__headline { text-align: center; }
-  .mv__headline-row { justify-content: center; }
-  .mv__headline-img { height: 68px; }
-  .mv__headline-plain { font-size: 25px; }
+  .mv__headline { align-items: center; }
+  .mv__headline-line1, .mv__headline-line2, .mv__headline-line3 { justify-content: center; }
+  .mv__text-img--left  { height: 57px; width: 135px; }
+  .mv__text-img--right { height: 58px; width: 150px; }
+  .mv__plain { font-size: 26px; margin-top: 26px; }
   .mv__subtext { text-align: center; }
   .mv__subtext p { font-size: 15px; letter-spacing: 0.18em; }
   .mv__download { justify-content: center; flex-wrap: wrap; }
   .mv__store-btn img { height: 48px; }
-
-  /* MV */
-  .mv {
-    padding: 20px 20px 50px;
-    min-height: unset;
-  }
-  .mv__content {
-    flex-direction: column-reverse;
-    gap: 32px;
-    margin-top: 32px;
-  }
-  .mv__mockups { width: 340px; height: 340px; }
-  .mv__mockup--front { width: 185px; }
-  .mv__mockup--mid { width: 138px; left: 80px; bottom: 40px; }
-  .mv__mockup--back { width: 104px; right: 0; bottom: 20px; }
-  .mv__circular { width: 75px; bottom: 125px; right: -20px; }
-  .mv__text-block { align-items: center; gap: 24px; }
-  .mv__headline { text-align: center; }
-  .mv__headline-row { justify-content: center; }
-  .mv__headline-img { height: 70px; }
-  .mv__headline-plain { font-size: 26px; }
-  .mv__subtext { text-align: center; }
-  .mv__subtext p { font-size: 16px; letter-spacing: 0.2em; }
-  .mv__download { justify-content: center; flex-wrap: wrap; }
-  .mv__store-btn img { height: 50px; }
 
   /* Sections */
   .section-inner { padding: 0 24px; }

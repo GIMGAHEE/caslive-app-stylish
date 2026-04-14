@@ -32,43 +32,50 @@
 
   <!-- ===== MV ===== -->
   <section class="mv" id="top">
-    <div class="mv__bg"></div>
-    <div class="mv__content">
+    <!-- 背景 -->
+    <div class="mv__bg">
+      <img src="https://www.figma.com/api/mcp/asset/48e12345-1321-45a4-8d07-c561d09751d6" alt="" class="mv__bg-img1" />
+      <img src="https://www.figma.com/api/mcp/asset/0ea6027b-8d04-4394-9336-9413276b24e0" alt="" class="mv__bg-img2" />
+    </div>
 
-      <!-- 左: スマホ目安 + 動画 -->
-      <div class="mv__mockups">
-        <!-- 一番後ろ（右上） -->
-        <img src="https://www.figma.com/api/mcp/asset/c455af9e-397c-4c76-8a83-5e2394490572" alt="" class="mv__mockup mv__mockup--back" />
-        <!-- 真ん中 -->
-        <img src="https://www.figma.com/api/mcp/asset/d0cfd6ce-760a-404e-8c2f-86f27bd24f34" alt="" class="mv__mockup mv__mockup--mid" />
-        <!-- 一番前：動画入りフレーム -->
-        <div class="mv__phone-wrap">
-          <img src="mockup-frame.png" alt="" class="mv__phone-frame" />
+    <div class="mv__content">
+      <!-- 左: movie/image グリッド -->
+      <div class="mv__movie-grid">
+        <!-- 後ろ右: app_1080x1920-2 -->
+        <img src="https://www.figma.com/api/mcp/asset/afdf6016-e20f-4eec-9173-2a84a93d5ed0" alt="" class="mv__app2" />
+        <!-- 後ろ中: app_1080x1920-1 -->
+        <img src="https://www.figma.com/api/mcp/asset/16089ac8-37b3-4749-ba41-ab994957d68f" alt="" class="mv__app1" />
+        <!-- 前: メインフレーム（動画入り） -->
+        <div class="mv__main-frame">
           <div class="mv__phone-video-area">
             <video class="mv__phone-video" id="mvVideo" muted playsinline preload="metadata">
               <source src="pr-video.mp4" type="video/mp4" />
             </video>
-            <button class="mv__play-btn" id="mvPlayBtn" aria-label="再生">
-              <img src="play-icon.png" alt="再生" />
-            </button>
           </div>
+          <!-- Circular Element（再生ボタン） -->
+          <button class="mv__play-btn" id="mvPlayBtn" aria-label="再生">
+            <img src="play-icon.png" alt="再生" />
+          </button>
         </div>
       </div>
 
-      <!-- 右: テキスト -->
+      <!-- 右: テキスト/ボタン -->
       <div class="mv__text-block">
         <div class="mv__headline">
-          <div class="mv__headline-row">
-            <img src="https://www.figma.com/api/mcp/asset/90464c6f-4370-48f2-8de7-cd918baea121" alt="気持ち" class="mv__headline-img" />
-            <span class="mv__headline-plain">を、</span>
+          <!-- 1行目: 気持ち画像 + を、 -->
+          <div class="mv__headline-line1">
+            <img src="https://www.figma.com/api/mcp/asset/fc7e8d56-be9e-4766-a09c-cceebc5415a5" alt="気持ち" class="mv__text-img mv__text-img--left" />
+            <span class="mv__plain">を、</span>
           </div>
-          <div class="mv__headline-row">
-            <span class="mv__headline-plain">推しへの</span>
+          <!-- 2行目: 推しへの -->
+          <div class="mv__headline-line2">
+            <span class="mv__plain">推しへの</span>
           </div>
-          <div class="mv__headline-row">
-            <span class="mv__headline-plain">直接</span>
-            <img src="https://www.figma.com/api/mcp/asset/3e2738c9-876f-42f3-9281-6ef6f134006f" alt="届けよう" class="mv__headline-img" />
-            <span class="mv__headline-plain">。</span>
+          <!-- 3行目: 直接 + 届けよう画像 + 。 -->
+          <div class="mv__headline-line3">
+            <span class="mv__plain">直接</span>
+            <img src="https://www.figma.com/api/mcp/asset/b8fc2a8e-e7c1-4cba-b644-9eb446541512" alt="届けよう" class="mv__text-img mv__text-img--right" />
+            <span class="mv__plain">。</span>
           </div>
         </div>
         <div class="mv__subtext">
@@ -78,14 +85,13 @@
         </div>
         <div class="mv__download">
           <a href="#" class="mv__store-btn">
-            <img src="https://www.figma.com/api/mcp/asset/6d51fa46-4590-4dd2-99aa-cf2791f99031" alt="App Store からダウンロード" />
+            <img src="https://www.figma.com/api/mcp/asset/a9273f15-7441-4fb9-ae99-6bdebe80c91d" alt="App Store" />
           </a>
           <a href="#" class="mv__store-btn">
-            <img src="https://www.figma.com/api/mcp/asset/db5c8645-f296-4ad0-91e5-37ab52376597" alt="Google Play で手に入れよう" />
+            <img src="https://www.figma.com/api/mcp/asset/1b8dde6a-0aa6-4611-b8ae-37813e7a4839" alt="Google Play" />
           </a>
         </div>
       </div>
-
     </div>
   </section>
 

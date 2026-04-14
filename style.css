@@ -702,7 +702,7 @@ ul { list-style: none; }
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    margin-top: 28px;
+    margin-top: 78px;
   }
   /* SP順序: ヘッドライン(-1) → 폰목업(0) → サブテキスト+バッジ(1) */
   .mv__text-block { align-items: flex-end; gap: 16px; order: -1; flex: none; width: 100%; }

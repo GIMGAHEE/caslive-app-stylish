@@ -115,46 +115,114 @@ ul { list-style: none; }
 }
 
 /* ============================================
-   MV (PR動画 全画面)
+   MV
    ============================================ */
 .mv {
   position: relative;
-  height: 100vh;
+  background: var(--color-main);
+  padding: 40px 50px 80px;
   overflow: hidden;
+  min-height: 860px;
 }
-.mv__video {
+.mv__bg {
   position: absolute;
   inset: 0;
+  background: url('https://www.figma.com/api/mcp/asset/b7b411d7-b4e4-43f6-aa00-f5fe915bf57f') center/cover no-repeat;
+  opacity: 0.6;
+}
+.mv__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: var(--max-width);
+  margin: 48px auto 0;
+}
+
+/* --- 左側: スマホ目安 --- */
+.mv__mockups {
+  position: relative;
+  flex-shrink: 0;
+  width: 660px;
+  height: 680px;
+}
+/* メインフレーム（動画入り） */
+.mv__phone-wrap {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 360px;
+  z-index: 3;
+}
+.mv__phone-frame {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+/* 動画エリア：フレーム画像の内側に重ねる */
+.mv__phone-video-area {
+  position: absolute;
+  /* 目安画像の画面部分に合わせて調整 */
+  top: 4%;
+  left: 4%;
+  right: 4%;
+  bottom: 13%;
+  border-radius: 28px;
+  overflow: hidden;
+  z-index: 1;
+  background: #000;
+}
+.mv__phone-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
+  display: block;
 }
-.mv__video-overlay {
+/* 再生ボタン */
+.mv__play-btn {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.15) 0%,
-    rgba(0,0,0,0.1) 50%,
-    rgba(0,0,0,0.45) 100%
-  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.mv__play-btn:hover { transform: translate(-50%, -50%) scale(1.1); }
+.mv__play-btn.hidden { opacity: 0; pointer-events: none; }
+.mv__play-btn svg { width: 100%; height: 100%; }
+
+/* 後ろのモックアップ */
+.mv__mockup { position: absolute; object-fit: cover; }
+.mv__mockup--back {
+  width: 202px;
+  border-radius: 30px;
+  bottom: 40px;
+  right: 0;
   z-index: 1;
 }
-.mv__content {
-  position: absolute;
-  inset: 0;
+.mv__mockup--mid {
+  width: 269px;
+  border-radius: 34px;
+  bottom: 80px;
+  left: 200px;
   z-index: 2;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: 60px 80px;
-  max-width: 100%;
 }
+
+/* --- 右側: テキスト --- */
 .mv__text-block {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 40px;
   align-items: flex-end;
 }
 .mv__headline { text-align: right; }
@@ -164,29 +232,23 @@ ul { list-style: none; }
   justify-content: flex-end;
   line-height: 1.05;
 }
-.mv__headline-img { height: 110px; filter: drop-shadow(0 2px 12px rgba(0,0,0,0.3)); }
+.mv__headline-img { height: 110px; }
 .mv__headline-plain {
   color: #EFF8FF;
   font-size: 42px;
   font-weight: 700;
   line-height: 1;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }
 .mv__subtext { text-align: right; }
 .mv__subtext p {
   color: #fff;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 500;
   letter-spacing: 0.2em;
-  line-height: 1.9;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+  line-height: 1.8;
 }
-.mv__download {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-.mv__store-btn img { height: 56px; width: auto; }
+.mv__download { display: flex; gap: 10px; align-items: center; }
+.mv__store-btn img { height: 60px; width: auto; }
 .mv__mockups {
   position: relative;
   flex-shrink: 0;
@@ -726,17 +788,23 @@ ul { list-style: none; }
     gap: 4px;
   }
   .header__hamburger { display: flex; z-index: 101; position: relative; }
-  .mv { height: 100svh; }
-  .mv__content { padding: 40px 28px; align-items: flex-end; justify-content: center; }
-  .mv__text-block { align-items: center; gap: 20px; }
+  /* MV */
+  .mv { padding: 20px 20px 50px; min-height: unset; }
+  .mv__content { flex-direction: column; gap: 32px; margin-top: 32px; }
+  .mv__mockups { width: 100%; height: 420px; }
+  .mv__phone-wrap { width: 185px; left: 50%; transform: translateX(-50%); }
+  .mv__mockup--mid { width: 138px; left: calc(50% + 20px); bottom: 40px; }
+  .mv__mockup--back { width: 104px; right: 10px; bottom: 20px; }
+  .mv__play-btn { width: 60px; height: 60px; }
+  .mv__text-block { align-items: center; gap: 24px; }
   .mv__headline { text-align: center; }
   .mv__headline-row { justify-content: center; }
   .mv__headline-img { height: 70px; }
   .mv__headline-plain { font-size: 26px; }
   .mv__subtext { text-align: center; }
-  .mv__subtext p { font-size: 15px; }
+  .mv__subtext p { font-size: 16px; }
   .mv__download { justify-content: center; flex-wrap: wrap; }
-  .mv__store-btn img { height: 48px; }
+  .mv__store-btn img { height: 50px; }
 
   /* MV */
   .mv {

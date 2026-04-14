@@ -80,3 +80,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// ---------- MV 動画再生ボタン ----------
+const mvVideo = document.getElementById('mvVideo');
+const mvPlayBtn = document.getElementById('mvPlayBtn');
+
+if (mvVideo && mvPlayBtn) {
+  mvPlayBtn.addEventListener('click', () => {
+    mvVideo.play();
+    mvPlayBtn.classList.add('hidden');
+  });
+  // 動画終了したら再生ボタン再表示
+  mvVideo.addEventListener('ended', () => {
+    mvPlayBtn.classList.remove('hidden');
+  });
+  // 動画クリックで一時停止/再生
+  mvVideo.addEventListener('click', () => {
+    if (mvVideo.paused) {
+      mvVideo.play();
+      mvPlayBtn.classList.add('hidden');
+    } else {
+      mvVideo.pause();
+      mvPlayBtn.classList.remove('hidden');
+    }
+  });
+}

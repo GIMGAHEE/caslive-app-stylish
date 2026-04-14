@@ -697,7 +697,7 @@ ul { list-style: none; }
   .header__hamburger { display: flex; }
 
   /* ---- MV ---- */
-  .mv { min-height: unset; padding: 20px 25px 50px; overflow: hidden; }
+  .mv { min-height: unset; padding: 80px 25px 50px; overflow: hidden; }
   .mv__content {
     flex-direction: column;
     align-items: center;

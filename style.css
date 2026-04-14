@@ -57,8 +57,8 @@ ul { list-style: none; }
 /* === MV === */
 .mv {
   position: relative; background: #0099FA;
-  padding: clamp(24px,3vw,40px) var(--gutter) clamp(40px,6vw,80px);
-  overflow: hidden; min-height: clamp(560px,70vw,900px);
+  padding: clamp(80px,9vw,120px) var(--gutter) clamp(40px,6vw,80px);
+  overflow: hidden; min-height: clamp(600px,65vw,900px);
 }
 .mv__bg { position: absolute; inset: 0; z-index: 0; }
 .mv__bg-img1 { position: absolute; height: 100%; left: -24.21%; top: 0; width: 124.2%; object-fit: cover; }
@@ -67,10 +67,10 @@ ul { list-style: none; }
   position: relative; z-index: 2;
   display: flex; align-items: center; justify-content: center;
   gap: clamp(24px,4vw,60px);
-  max-width: 1290px; margin: clamp(32px,4vw,48px) auto 0;
+  max-width: 1290px; margin: clamp(20px,2vw,40px) auto 0;
 }
 /* movie/image */
-.mv__movie-grid { position: relative; flex-shrink: 0; width: clamp(260px,44vw,661px); height: clamp(260px,44vw,660px); }
+.mv__movie-grid { position: relative; flex-shrink: 0; width: clamp(260px,38vw,580px); height: clamp(260px,38vw,580px); }
 .mv__app2 {
   position: absolute; right: 0; top: calc(100%*142/660);
   width: calc(100%*202/661); height: calc(100%*358/660);

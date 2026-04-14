@@ -242,42 +242,61 @@
 
   <!-- ===== ライブコマース ===== -->
   <section class="commerce" id="commerce">
+    <!-- 背景: #9B73D4 + 背景画像 opacity 24% -->
     <div class="commerce__bg"></div>
+    <img src="https://www.figma.com/api/mcp/asset/e08c57b0-83fa-4ec9-be51-c6ce6b85699a" alt="" class="commerce__bg-img" />
+
     <div class="section-inner">
+      <!-- タイトル -->
       <div class="section-title">
         <p class="section-title__en" style="color: var(--color-base-1)">LIVE COMMERCE</p>
         <h2 class="section-title__ja" style="color: #fff">配信を観ながら<span style="color: var(--color-accent-1)">グッズをゲット</span></h2>
       </div>
-      <!-- 説明ボックス -->
+
+      <!-- 説明ボックス: 白枠 -->
       <div class="commerce__intro">
         <div class="commerce__intro-box">
-          <p class="commerce__intro-heading">ライブコマースって…？</p>
+          <p class="commerce__intro-heading">ライブコマース<span style="font-weight:700">って…？</span></p>
           <p class="commerce__intro-text">ライブ配信中にキャストが紹介する商品を、その場でそのまま購入できるシステムです。推しが実際に愛用しているアイテムや限定グッズなど、ここだけの商品が手に入ります。</p>
         </div>
       </div>
-      <!-- 3つの縦リストカード -->
+
+      <!-- 3つの横長カード -->
       <div class="commerce__list">
-        <div class="commerce__list-item">
-          <div class="commerce__list-text">
-            <h3 class="commerce__list-title"><span class="text-purple-light">推しから直接おすすめ</span>してもらえる</h3>
-            <p class="commerce__list-desc">キャストが商品のこだわりポイントをライブで紹介。気になることはコメントで直接質問できるから、納得してお買い物できます。</p>
+
+        <!-- 項目1: テキスト左 + 画像右 -->
+        <div class="commerce__card-row">
+          <div class="commerce__card-text">
+            <h3 class="commerce__card-title"><span class="text-purple-light">推しから直接おすすめ</span>してもらえる</h3>
+            <p class="commerce__card-desc">キャストが商品のこだわりポイントをライブで紹介。気になることはコメントで直接質問できるから、納得してお買い物できます。</p>
           </div>
-          <img src="https://www.figma.com/api/mcp/asset/53b18320-1d4a-4ed9-80d0-4339371ed721" alt="おすすめ" class="commerce__list-img" />
-        </div>
-        <div class="commerce__list-item commerce__list-item--reverse">
-          <img src="https://www.figma.com/api/mcp/asset/c1b77904-4504-42db-9352-774ae8a1531c" alt="購入" class="commerce__list-img" />
-          <div class="commerce__list-text">
-            <h3 class="commerce__list-title">配信中に<span class="text-purple-light">そのまま購入</span>、操作もかんたん</h3>
-            <p class="commerce__list-desc">欲しいと思ったら、配信画面を離れることなくその場で購入完了。推しのライブ限定アイテムも見逃しません。</p>
+          <div class="commerce__card-img-wrap">
+            <img src="https://www.figma.com/api/mcp/asset/d9664f14-0533-4a92-a7c8-50a6538cd176" alt="おすすめ" />
           </div>
         </div>
-        <div class="commerce__list-item">
-          <div class="commerce__list-text">
-            <h3 class="commerce__list-title"><span class="text-purple-light">遠隔</span>で推しにプレゼントを贈れる</h3>
-            <p class="commerce__list-desc">配信中にライバーへサプライズでプレゼントを贈ることも可能。推しのリアクションをリアルタイムで見届けましょう。</p>
+
+        <!-- 項目2: 画像左 + テキスト右 -->
+        <div class="commerce__card-row commerce__card-row--reverse">
+          <div class="commerce__card-img-wrap">
+            <img src="https://www.figma.com/api/mcp/asset/575b963f-97a4-4531-a074-f469cf39d266" alt="購入" />
           </div>
-          <img src="https://www.figma.com/api/mcp/asset/ece37a6c-3b3a-4113-9819-d47efebff510" alt="プレゼント" class="commerce__list-img" />
+          <div class="commerce__card-text">
+            <h3 class="commerce__card-title">配信中に<span class="text-purple-light">そのまま購入</span>、操作もかんたん</h3>
+            <p class="commerce__card-desc">欲しいと思ったら、配信画面を離れることなくその場で購入完了。推しのライブ限定アイテムも見逃しません。</p>
+          </div>
         </div>
+
+        <!-- 項目3: テキスト左 + 画像右 -->
+        <div class="commerce__card-row">
+          <div class="commerce__card-text">
+            <h3 class="commerce__card-title"><span class="text-purple-light">遠隔</span>で推しにプレゼントを贈れる</h3>
+            <p class="commerce__card-desc">配信中にライバーへサプライズでプレゼントを贈ることも可能。推しのリアクションをリアルタイムで見届けましょう。</p>
+          </div>
+          <div class="commerce__card-img-wrap">
+            <img src="https://www.figma.com/api/mcp/asset/a0e2fb5e-9a7f-4310-b917-a5eacfd38ed8" alt="プレゼント" />
+          </div>
+        </div>
+
       </div>
     </div>
   </section>

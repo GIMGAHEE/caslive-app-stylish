@@ -32,31 +32,30 @@
 
   <!-- ===== MV ===== -->
   <section class="mv" id="top">
-    <!-- 背景 -->
     <div class="mv__bg">
-      <img src="https://www.figma.com/api/mcp/asset/85cd94d6-5322-42e3-a730-b5b940a39d8b" alt="" class="mv__bg-img1" />
-      <img src="https://www.figma.com/api/mcp/asset/c6f54984-db71-4022-98a6-02f612a267a9" alt="" class="mv__bg-img2" />
+      <img src="https://www.figma.com/api/mcp/asset/507910b4-4118-473a-97f7-dfae4d4496d1" alt="" class="mv__bg-img1" />
+      <img src="https://www.figma.com/api/mcp/asset/f69e0a32-3be5-4e4b-9fe7-0da7605976fe" alt="" class="mv__bg-img2" />
     </div>
 
     <div class="mv__content">
-      <!-- 左: movie/image グリッド -->
+      <!-- 左: movie/image -->
       <div class="mv__movie-grid">
-        <!-- 後ろ右: app_1080x1920-2 -->
-        <img src="https://www.figma.com/api/mcp/asset/70be898e-ae49-444c-9101-91dbf362d578" alt="" class="mv__app2" />
-        <!-- 後ろ中: app_1080x1920-1 -->
-        <img src="https://www.figma.com/api/mcp/asset/5528e704-25b8-49b1-99dc-a6c0ab1326a0" alt="" class="mv__app1" />
-        <!-- 前: メインフレーム（動画入り） -->
+        <!-- app2: 右奥 ml=458.9 mt=142.35 w=202 h=358 -->
+        <img src="https://www.figma.com/api/mcp/asset/bf308ef3-3713-4580-9f4e-3259bc4df629"
+             alt="" class="mv__app2" />
+        <!-- app1: 中間 ml=252.84 mt=81.63 w=268.77 h=477.82 -->
+        <img src="https://www.figma.com/api/mcp/asset/f6848fb6-7062-4be3-afd6-8252aea6a248"
+             alt="" class="mv__app1" />
+        <!-- メインフレーム: ml=0 mt=0 w=360 h=642 白枠 -->
         <div class="mv__main-frame">
-          <div class="mv__phone-video-area">
-            <!-- 動画再生前のサムネイル -->
-            <img src="https://www.figma.com/api/mcp/asset/aaf3a891-813f-49c9-9e69-ef1d2615ef66" alt="" class="mv__phone-thumb" id="mvThumb" />
-            <video class="mv__phone-video" id="mvVideo" muted playsinline preload="metadata">
-              <source src="pr-video.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <!-- Circular Element（再生ボタン） -->
+          <img src="https://www.figma.com/api/mcp/asset/f7e6781a-c184-452f-b6da-94debf1031d2"
+               alt="" class="mv__phone-thumb" id="mvThumb" />
+          <video class="mv__phone-video" id="mvVideo" muted playsinline preload="metadata">
+            <source src="pr-video.mp4" type="video/mp4" />
+          </video>
+          <!-- Circular Element: ml=107.51 mt=248.87 w=145 h=145 -->
           <button class="mv__play-btn" id="mvPlayBtn" aria-label="再生">
-            <img src="play-icon.png" alt="再生" />
+            <img src="https://www.figma.com/api/mcp/asset/301592c5-b8fd-42e1-91ed-c9fae17b735e" alt="再生" />
           </button>
         </div>
       </div>
@@ -64,19 +63,18 @@
       <!-- 右: テキスト/ボタン -->
       <div class="mv__text-block">
         <div class="mv__headline">
-          <!-- 1行目: 気持ち画像 + を、 -->
-          <div class="mv__headline-line1">
-            <img src="https://www.figma.com/api/mcp/asset/e3fdf793-c926-4c99-8d45-5e3eee031f8a" alt="気持ち" class="mv__text-img mv__text-img--left" />
-            <span class="mv__plain">を、</span>
-          </div>
-          <!-- 2行目: 推しへの -->
-          <div class="mv__headline-line2">
+          <div class="mv__headline-row">
             <span class="mv__plain">推しへの</span>
           </div>
-          <!-- 3行目: 直接 + 届けよう画像 + 。 -->
-          <div class="mv__headline-line3">
+          <div class="mv__headline-row">
+            <img src="https://www.figma.com/api/mcp/asset/f6973864-b7b8-4afc-894a-832c13e630f3"
+                 alt="気持ち" class="mv__text-img--left" />
+            <span class="mv__plain">を、</span>
+          </div>
+          <div class="mv__headline-row">
             <span class="mv__plain">直接</span>
-            <img src="https://www.figma.com/api/mcp/asset/5f859d07-ef16-471a-bd97-92d114b3ab0b" alt="届けよう" class="mv__text-img mv__text-img--right" />
+            <img src="https://www.figma.com/api/mcp/asset/2b2004b3-0efc-4315-bfb4-f3ce14f0c38c"
+                 alt="届けよう" class="mv__text-img--right" />
             <span class="mv__plain">。</span>
           </div>
         </div>
@@ -87,10 +85,10 @@
         </div>
         <div class="mv__download">
           <a href="#" class="mv__store-btn">
-            <img src="https://www.figma.com/api/mcp/asset/2489c863-eadd-49ba-99a4-ed31c170bdf9" alt="App Store" />
+            <img src="https://www.figma.com/api/mcp/asset/c789a8ae-d6db-4c0a-a05a-939ee5836f4f" alt="App Store" />
           </a>
           <a href="#" class="mv__store-btn">
-            <img src="https://www.figma.com/api/mcp/asset/05098403-cab7-4949-968c-3ccf3b5f4e52" alt="Google Play" />
+            <img src="https://www.figma.com/api/mcp/asset/393a2ca9-4d1e-4281-ba54-d18187e2db1f" alt="Google Play" />
           </a>
         </div>
       </div>

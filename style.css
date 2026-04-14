@@ -327,7 +327,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px clamp(32px,6vw,96px);
+  padding: 40px clamp(32px,6vw,96px);
   width: 100%;
   max-width: 1040px;
   gap: clamp(20px,3vw,60px);

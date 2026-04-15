@@ -420,7 +420,7 @@ ul { list-style: none; }
   overflow: hidden;
 }
 .features__bg { display: none; }
-.features .section-inner { max-width: var(--max-w-wide); }
+.features .section-inner { max-width: var(--max-w-wide); padding: 0 clamp(20px,4vw,60px); }
 .download-cta__wave {
   width: 100%;
   line-height: 0;

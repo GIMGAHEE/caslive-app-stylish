@@ -415,12 +415,12 @@ ul { list-style: none; }
   background-color: #f8f8f8;
   background-image: radial-gradient(circle, #c8c8c8 1px, transparent 1px);
   background-size: 20px 20px;
-  padding: clamp(60px,8vw,120px) 0 0;
+  padding: clamp(60px,8vw,120px) var(--gutter) 0;
   position: relative;
   overflow: hidden;
 }
 .features__bg { display: none; }
-.features .section-inner { max-width: var(--max-w-wide); padding: 0 clamp(20px,4vw,60px); }
+.features .section-inner { max-width: var(--max-w-wide); padding: 0; }
 .download-cta__wave {
   width: 100%;
   line-height: 0;

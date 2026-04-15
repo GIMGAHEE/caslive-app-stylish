@@ -340,7 +340,7 @@ ul { list-style: none; }
   margin-bottom: 16px;
 }
 .commerce__intro-text {
-  font-size: clamp(13px,1.2vw,18px);
+  font-size: clamp(13px,1vw,20px);
   font-weight: 500;
   line-height: 1.9;
   color: #fff;
@@ -386,7 +386,7 @@ ul { list-style: none; }
   border-radius: 0;
 }
 .commerce__card-desc {
-  font-size: clamp(13px,1.1vw,18px);
+  font-size: clamp(13px,1vw,20px);
   font-weight: 500;
   line-height: 1.9;
   color: #fff;
@@ -550,12 +550,12 @@ ul { list-style: none; }
 }
 .download-cta__text {
   color: #fff;
-  font-size: clamp(13px,1.3vw,22px);
+  font-size: clamp(13px,1vw,20px);
   font-weight: 500;
   line-height: 1.73;
 }
 .download-cta__catch {
-  font-size: clamp(15px,1.5vw,22px);
+  font-size: clamp(15px,1.3vw,24px);
   font-weight: 500;
   line-height: 1.73;
   margin-bottom: 0;

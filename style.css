@@ -516,7 +516,7 @@ ul { list-style: none; }
 /* === DOWNLOAD CTA === */
 .download-cta {
   background: linear-gradient(0deg, #7FCDFE 0%, #B99CE0 100%);
-  padding: clamp(140px,16vw,200px) 0 clamp(60px,8vw,80px);
+  padding: clamp(140px,16vw,200px) var(--gutter) clamp(60px,8vw,80px);
   overflow: hidden;
   position: relative;
 }
@@ -535,7 +535,7 @@ ul { list-style: none; }
   gap: clamp(20px,4vw,60px);
   width: 100%;
   max-width: var(--max-w-wide);
-  padding: 0 var(--gutter);
+  padding: 0;
 }
 
 /* 左列: アイコン + テキスト */

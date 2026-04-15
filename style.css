@@ -525,20 +525,19 @@ ul { list-style: none; }
   flex-direction: column;
   align-items: center;
   gap: clamp(40px,5vw,80px);
-  max-width: var(--max-w-wide);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
-  width: 100%;
-  box-sizing: border-box;
 }
 
 /* 3列ボディ */
 .download-cta__body {
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: space-between;
   gap: clamp(20px,4vw,60px);
   width: 100%;
+  max-width: var(--max-w-wide);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  box-sizing: border-box;
 }
 
 /* 左列: アイコン + テキスト */

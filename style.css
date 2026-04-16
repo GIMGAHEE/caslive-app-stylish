@@ -861,12 +861,13 @@ ul { list-style: none; }
   .news .section-inner { padding: 0 var(--sp-gutter); max-width: 100%; }
   .news__tags { justify-content: center; gap: 6px; flex-wrap: wrap; }
   .news__tag { font-size: 12px; height: 25px; padding: 4px 0; width: 80px; border-radius: 3px; }
-  .news__list { max-width: 340px; gap: 20px; }
-  .news__item { padding: 20px; border-radius: 20px; flex-direction: column; align-items: flex-start; gap: 10px; }
-  .news__item-meta { margin-bottom: 0; }
-  .news__item-title { font-size: 14px; }
-  .news__badge { width: 80px; font-size: 12px; height: 25px; padding: 4px 8px; }
-  .news__date { font-size: clamp(12px,.9vw,14px); }
+  .news__list { max-width: 100%; gap: 20px; }
+  .news__item { padding: 16px 20px; border-radius: 20px; flex-direction: row; align-items: center; gap: 0; }
+  /* SP: タイトルだけ表示、タグ・日付・矢印は非表示 */
+  .news__item-meta { display: none; }
+  .news__item-title { font-size: 14px; font-weight: 700; }
+  .news__badge { display: none; }
+  .news__date { display: none; }
   .news__arrow { display: none; }
   .news__more { justify-content: center; }
 

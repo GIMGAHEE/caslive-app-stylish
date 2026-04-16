@@ -711,12 +711,11 @@ ul { list-style: none; }
 
   /* ---- MV ---- */
   .mv { min-height: unset; padding: 80px 25px 50px; }
-  /* SP: gridで順序を制御 headline(1) → movie(2) → bottom(3) */
+  /* SP순서: ヘッドライン(1) → 폰(2) → サブテキスト(3) → バッジ(4) */
   .mv__content {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 32px;
+    gap: 24px;
     margin-top: 24px;
     justify-items: center;
   }
@@ -732,20 +731,16 @@ ul { list-style: none; }
     aspect-ratio: 661/660;
     margin: 0 auto;
   }
-  .mv__bottom {
-    grid-row: 3;
-    align-items: center;
-    gap: 24px;
-    width: 100%;
-  }
+  /* mv__bottom을 display:contents로 풀어서 각 자식이 grid에 직접 참여 */
+  .mv__bottom { display: contents; }
+  .mv__subtext { grid-row: 3; text-align: center; width: 100%; }
+  .mv__download { grid-row: 4; justify-content: center; gap: 8px; width: 100%; }
   .mv__headline { align-items: flex-end; }
   .mv__headline-row { justify-content: flex-end; }
   .mv__text-img--left  { height: 71px; }
   .mv__text-img--right { height: 73px; }
   .mv__plain { font-size: 26px; }
-  .mv__subtext { text-align: center; }
   .mv__subtext p { font-size: 16px; line-height: 2; letter-spacing: .1em; }
-  .mv__download { justify-content: center; gap: 8px; }
   .mv__store-btn img { height: 54px; }
 
   /* ---- About ---- */

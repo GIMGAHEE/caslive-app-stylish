@@ -148,15 +148,11 @@ ul { list-style: none; }
   gap: clamp(20px,3.5vw,65px);
   align-items: flex-end;
 }
-/* PC: mv__bottom은 text-blockのflex columnの一部 */
+/* PC: mv__bottom은 mv__text-block과 같은 flex column */
 .mv__bottom {
   display: flex; flex-direction: column;
   gap: clamp(20px,3.5vw,65px);
   align-items: flex-end;
-}
-/* PC: mv__bottom은 mv__text-block의 일부として扱う */
-.mv__bottom {
-  display: contents;
 }
 .mv__headline {
   display: flex; flex-direction: column; align-items: flex-end;
@@ -731,10 +727,10 @@ ul { list-style: none; }
     aspect-ratio: 661/660;
     margin: 0 auto;
   }
-  /* mv__bottom: 자식들이 grid에 직접 참여 */
+  /* mv__bottom: SP에서 display:contents → 자식이 grid에 직접 참여 */
   .mv__bottom { display: contents !important; }
-  .mv__subtext { grid-row: 3 !important; text-align: center; width: 100%; }
-  .mv__download { grid-row: 4 !important; justify-content: center; gap: 8px; width: 100%; }
+  .mv__subtext { order: 3; grid-row: 3; text-align: center; width: 100%; }
+  .mv__download { order: 4; grid-row: 4; justify-content: center; gap: 8px; width: 100%; }
   .mv__headline { align-items: flex-end; }
   .mv__headline-row { justify-content: flex-end; }
   .mv__text-img--left  { height: 71px; }

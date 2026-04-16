@@ -1,525 +1,570 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CasLive - 推しへの気持ちを、直接届けよう。</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Urbanist:wght@500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-
-  <!-- ===== HEADER (fixed) ===== -->
-  <header class="header" id="header">
-    <div class="header__inner">
-      <div class="header__logo">
-        <img src="assets/images/logo.svg" alt="CasLive" class="header__logo-img" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CasLive - 推しへの気持ちを、直接届けよう。</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Urbanist:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER (fixed) ===== -->
+    <header class="header" id="header">
+      <div class="header__inner">
+        <div class="header__logo">
+          <img src="assets/images/logo.svg" alt="CasLive" class="header__logo-img" />
+        </div>
+        <nav class="header__nav" id="headerNav">
+          <a href="#about" class="header__nav-link">CasLiveとは？</a>
+          <a href="#live" class="header__nav-link">推しとリアルタイム交流</a>
+          <a href="#commerce" class="header__nav-link">ライブコマース</a>
+          <a href="#features" class="header__nav-link">近日公開新機能</a>
+          <a href="#news" class="header__nav-link">新着情報</a>
+        </nav>
+        <button class="header__hamburger" id="hamburger" aria-label="メニュー">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-      <nav class="header__nav" id="headerNav">
-        <a href="#about" class="header__nav-link">CasLiveとは？</a>
-        <a href="#live" class="header__nav-link">推しとリアルタイム交流</a>
-        <a href="#commerce" class="header__nav-link">ライブコマース</a>
-        <a href="#features" class="header__nav-link">近日公開新機能</a>
-        <a href="#news" class="header__nav-link">新着情報</a>
+    </header>
+
+    <!-- ===== SP ドロワーメニュー ===== -->
+    <div class="sp-menu-overlay" id="spMenuOverlay"></div>
+    <div class="sp-menu" id="spMenu">
+      <button class="sp-menu__close" id="spMenuClose" aria-label="閉じる">✕</button>
+      <div class="sp-menu__logo">
+        <img src="assets/images/logo.svg" alt="CasLive" />
+      </div>
+      <nav class="sp-menu__nav">
+        <a href="#about" class="sp-menu__link">CasLiveとは？</a>
+        <a href="#live" class="sp-menu__link">推しとリアルタイム交流</a>
+        <a href="#commerce" class="sp-menu__link">ライブコマース</a>
+        <a href="#features" class="sp-menu__link">近日公開新機能</a>
+        <a href="#news" class="sp-menu__link">新着情報</a>
       </nav>
-      <button class="header__hamburger" id="hamburger" aria-label="メニュー">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- ===== SP ドロワーメニュー ===== -->
-  <div class="sp-menu-overlay" id="spMenuOverlay"></div>
-  <div class="sp-menu" id="spMenu">
-    <button class="sp-menu__close" id="spMenuClose" aria-label="閉じる">✕</button>
-    <div class="sp-menu__logo">
-      <img src="assets/images/logo.svg" alt="CasLive" />
-    </div>
-    <nav class="sp-menu__nav">
-      <a href="#about" class="sp-menu__link">CasLiveとは？</a>
-      <a href="#live" class="sp-menu__link">推しとリアルタイム交流</a>
-      <a href="#commerce" class="sp-menu__link">ライブコマース</a>
-      <a href="#features" class="sp-menu__link">近日公開新機能</a>
-      <a href="#news" class="sp-menu__link">新着情報</a>
-    </nav>
-    <div class="sp-menu__badges">
-      <a href="#" class="sp-menu__badge-btn">
-        <img src="assets/images/badge-appstore.png" alt="App Store" />
-      </a>
-      <a href="#" class="sp-menu__badge-btn">
-        <img src="assets/images/badge-google.png" alt="Google Play" />
-      </a>
-    </div>
-  </div>
-
-  <!-- ===== MV ===== -->
-  <section class="mv" id="top">
-    <div class="mv__bg">
-      <img src="https://www.figma.com/api/mcp/asset/507910b4-4118-473a-97f7-dfae4d4496d1" alt="" class="mv__bg-img1" />
-      <img src="https://www.figma.com/api/mcp/asset/f69e0a32-3be5-4e4b-9fe7-0da7605976fe" alt="" class="mv__bg-img2" />
-    </div>
-
-    <div class="mv__content">
-
-      <!-- [SP:1位 / PC:右列] ヘッドライン -->
-      <div class="mv__text-block">
-        <div class="mv__headline">
-          <div class="mv__headline-row">
-            <span class="mv__plain">推しへの</span>
-            <img src="assets/images/left_text.svg" alt="気持ち" class="mv__text-img--left" />
-            <span class="mv__plain">を、</span>
-          </div>
-          <div class="mv__headline-row">
-            <span class="mv__plain">直接</span>
-            <img src="assets/images/right_text.svg" alt="届けよう" class="mv__text-img--right" />
-            <span class="mv__plain">。</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- [SP:2位 / PC:左列] スマホモックアップ -->
-      <div class="mv__movie-grid">
-        <img src="https://www.figma.com/api/mcp/asset/bf308ef3-3713-4580-9f4e-3259bc4df629"
-             alt="" class="mv__app2" />
-        <img src="https://www.figma.com/api/mcp/asset/f6848fb6-7062-4be3-afd6-8252aea6a248"
-             alt="" class="mv__app1" />
-        <div class="mv__main-frame">
-          <img src="https://www.figma.com/api/mcp/asset/f7e6781a-c184-452f-b6da-94debf1031d2"
-               alt="" class="mv__phone-thumb" id="mvThumb" />
-          <video class="mv__phone-video" id="mvVideo" muted playsinline preload="metadata">
-            <source src="assets/video/pr-video.mp4" type="video/mp4" />
-          </video>
-          <button class="mv__play-btn" id="mvPlayBtn" aria-label="再生">
-            <img src="https://www.figma.com/api/mcp/asset/301592c5-b8fd-42e1-91ed-c9fae17b735e" alt="再生" />
-          </button>
-        </div>
-      </div>
-
-      <!-- [SP:3位 / PC:右列続き] サブテキスト -->
-      <div class="mv__subtext">
-        <p>行けない日も推しに会える場所</p>
-        <p>お店の空気感そのままライブで</p>
-        <p>ぜんぶここで応援がカタチに。</p>
-      </div>
-
-      <!-- [SP:4位 / PC:右列続き] ダウンロードボタン -->
-      <div class="mv__download">
-        <a href="#" class="mv__store-btn">
+      <div class="sp-menu__badges">
+        <a href="#" class="sp-menu__badge-btn">
           <img src="assets/images/badge-appstore.png" alt="App Store" />
         </a>
-        <a href="#" class="mv__store-btn">
+        <a href="#" class="sp-menu__badge-btn">
           <img src="assets/images/badge-google.png" alt="Google Play" />
         </a>
       </div>
-
     </div>
-  </section>
 
-  <!-- ===== CasLiveとは？ ===== -->
-  <section class="about" id="about">
-    <div class="section-inner">
-      <div class="section-title">
-        <p class="section-title__en gradient-text">ABOUT</p>
-        <h2 class="section-title__ja">CasLive とは？</h2>
+    <!-- ===== MV ===== -->
+    <section class="mv" id="top">
+      <div class="mv__bg">
+        <img src="https://www.figma.com/api/mcp/asset/507910b4-4118-473a-97f7-dfae4d4496d1" alt="" class="mv__bg-img1" />
+        <img src="https://www.figma.com/api/mcp/asset/f69e0a32-3be5-4e4b-9fe7-0da7605976fe" alt="" class="mv__bg-img2" />
       </div>
-      <p class="about__text">
-        行けない日も推しのそばにいられる。<br />
-        お気に入りのキャストが配信を始めたら、すぐにお知らせ。スキマ時間にライブを覗いて、コメントで声を届けて、ここだけのグッズで想いをカタチにしよう。<span class="text-blue">直接会える時間も、画面越しの時間も、ぜんぶが推し活になる。</span>それが、CasLive。
-      </p>
-    </div>
-  </section>
 
-  <!-- 繋ぎ目 -->
-  <div class="connector connector--about-to-user">
-    <img src="https://www.figma.com/api/mcp/asset/0c09f69a-bbe5-48fa-a094-ff8de8300c52" alt="" />
-  </div>
-
-  <!-- ===== ライバー・ユーザー紹介 ===== -->
-  <section class="users" id="users">
-    <div class="users__flow">
-
-      <!-- ライバー -->
-      <div class="users__col">
-        <div class="users__label users__label--liver">ライバー</div>
-        <div class="users__img-wrap">
-          <img src="https://www.figma.com/api/mcp/asset/08ecb84e-1f35-4f17-8cb4-85d46392604e" alt="ライバー画面" class="users__app-img" />
-          <div class="users__badge users__badge--left users__badge--blue">
-            <img src="https://www.figma.com/api/mcp/asset/fbeaa014-c253-4d78-8449-128fda7047e2" alt="" />
-            <span>配信詳細<br/>設定</span>
-          </div>
-          <div class="users__badge users__badge--right users__badge--blue">
-            <img src="https://www.figma.com/api/mcp/asset/5fe2400f-ac4d-45d7-82be-18b5e4148554" alt="" />
-            <span>美顔機能<br/>充実</span>
+      <div class="mv__content">
+        <!-- [SP:1位 / PC:右列] ヘッドライン -->
+        <div class="mv__text-block">
+          <div class="mv__headline">
+            <div class="mv__headline-row">
+              <span class="mv__plain">推しへの</span>
+              <img src="assets/images/left_text.svg" alt="気持ち" class="mv__text-img--left" />
+              <span class="mv__plain">を、</span>
+            </div>
+            <div class="mv__headline-row">
+              <span class="mv__plain">直接</span>
+              <img src="assets/images/right_text.svg" alt="届けよう" class="mv__text-img--right" />
+              <span class="mv__plain">。</span>
+            </div>
           </div>
         </div>
-        <p class="users__desc">
-          CasLiveには、<span class="text-blue">人気店の現役キャストたちが配信中。</span>お店では見られない素顔やオフショットも、ここだけの特別なコンテンツとして届けてくれます。
+
+        <!-- [SP:2位 / PC:左列] スマホモックアップ -->
+        <div class="mv__movie-grid">
+          <img src="https://www.figma.com/api/mcp/asset/bf308ef3-3713-4580-9f4e-3259bc4df629" alt="" class="mv__app2" />
+          <img src="https://www.figma.com/api/mcp/asset/f6848fb6-7062-4be3-afd6-8252aea6a248" alt="" class="mv__app1" />
+          <div class="mv__main-frame">
+            <img src="https://www.figma.com/api/mcp/asset/f7e6781a-c184-452f-b6da-94debf1031d2" alt="" class="mv__phone-thumb" id="mvThumb" />
+            <video class="mv__phone-video" id="mvVideo" muted playsinline preload="metadata">
+              <source src="assets/video/pr-video.mp4" type="video/mp4" />
+            </video>
+            <button class="mv__play-btn" id="mvPlayBtn" aria-label="再生">
+              <img src="https://www.figma.com/api/mcp/asset/301592c5-b8fd-42e1-91ed-c9fae17b735e" alt="再生" />
+            </button>
+          </div>
+        </div>
+
+        <!-- [SP:3位 / PC:右列続き] サブテキスト -->
+        <div class="mv__subtext">
+          <p>行けない日も推しに会える場所</p>
+          <p>お店の空気感そのままライブで</p>
+          <p>ぜんぶここで応援がカタチに。</p>
+        </div>
+
+        <!-- [SP:4位 / PC:右列続き] ダウンロードボタン -->
+        <div class="mv__download">
+          <a href="#" class="mv__store-btn">
+            <img src="assets/images/badge-appstore.png" alt="App Store" />
+          </a>
+          <a href="#" class="mv__store-btn">
+            <img src="assets/images/badge-google.png" alt="Google Play" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CasLiveとは？ ===== -->
+    <section class="about" id="about">
+      <div class="section-inner">
+        <div class="section-title">
+          <p class="section-title__en gradient-text">ABOUT</p>
+          <h2 class="section-title__ja">CasLive とは？</h2>
+        </div>
+        <p class="about__text">
+          行けない日も推しのそばにいられる。
+          <br />
+          お気に入りのキャストが配信を始めたら、すぐにお知らせ。スキマ時間にライブを覗いて、コメントで声を届けて、ここだけのグッズで想いをカタチにしよう。
+          <span class="text-blue">直接会える時間も、画面越しの時間も、ぜんぶが推し活になる。</span>
+          それが、CasLive。
         </p>
       </div>
+    </section>
 
-      <!-- 中央の区切り線 -->
-      <div class="users__divider"></div>
-
-      <!-- 視聴者 -->
-      <div class="users__col">
-        <div class="users__label users__label--viewer">視聴者</div>
-        <div class="users__img-wrap">
-          <img src="https://www.figma.com/api/mcp/asset/f28feb2b-5814-4dd0-bda3-4f7d7e15057b" alt="視聴者画面" class="users__app-img" />
-          <div class="users__badge users__badge--left users__badge--purple">
-            <img src="https://www.figma.com/api/mcp/asset/5fe2400f-ac4d-45d7-82be-18b5e4148554" alt="" />
-            <span>ギフト<br/>スタンプ</span>
-          </div>
-          <div class="users__badge users__badge--right users__badge--purple">
-            <img src="https://www.figma.com/api/mcp/asset/5fe2400f-ac4d-45d7-82be-18b5e4148554" alt="" />
-            <span>コメント</span>
-          </div>
-        </div>
-        <p class="users__desc">
-          推しキャストの配信をリアルタイムで楽しみながら、<span class="text-purple">スタンプやギフトで気持ちを届けよう。</span>CasLiveならいつでも推しとつながれます。
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== ライブ配信とリアルタイム交流 ===== -->
-  <section class="live" id="live">
-    <!-- V字ウェーブ -->
-    <div class="live__wave">
-      <img src="https://www.figma.com/api/mcp/asset/994b2780-61c2-4fea-95c1-54fa1297e205" alt="" />
-    </div>
-    <div class="live__title">
-      <p class="section-title__en gradient-text">LIVE STREAMING</p>
-      <h2 class="live__heading">推しと<span class="text-blue">リアルタイム</span>で交流しよう</h2>
+    <!-- 繋ぎ目 -->
+    <div class="connector connector--about-to-user">
+      <img src="https://www.figma.com/api/mcp/asset/0c09f69a-bbe5-48fa-a094-ff8de8300c52" alt="" />
     </div>
 
-    <div class="live__points">
-
-      <!-- POINT 1 -->
-      <div class="live__point">
-        <div class="live__point-img live__point-img--pink">
-          <img src="https://www.figma.com/api/mcp/asset/4b96aadc-7650-4a7d-9820-87a67054566d" alt="推しのリアルに出会える配信" />
-        </div>
-        <div class="live__point-text">
-<div class="live__point-header">
-          <span class="live__point-tag">POINT 1</span>
-          <h3 class="live__point-title">推しのリアルに出会える配信</h3>
-        </div>
-        <div class="live__point-body">
-          <p class="live__point-desc">お気に入りのキャストがお店からリアルタイムで配信。カウンター越しの笑顔も、準備中のオフショットも、ここだけの瞬間をライブでお届けします。</p>
-          <ul class="live__point-list">
-            <li>・お店の雰囲気をリアルタイムで体感</li>
-            <li>・日常のオフショットも見られる</li>
-            <li>・通知設定で配信開始を見逃さない</li>
-          </ul>
-        </div>
-        </div>
-      </div>
-
-      <div class="live__divider"><img src="https://www.figma.com/api/mcp/asset/216faf96-3947-46b6-88a6-8c67227aaf93" alt="" /></div>
-
-      <!-- POINT 2 -->
-      <div class="live__point">
-        <div class="live__point-img live__point-img--pink">
-          <img src="https://www.figma.com/api/mcp/asset/d5735e88-6414-4ff9-bbe7-00cce80c916a" alt="コメントとギフト" />
-        </div>
-        <div class="live__point-text">
-<div class="live__point-header">
-          <span class="live__point-tag">POINT 2</span>
-          <h3 class="live__point-title">コメントとギフトで想いを届ける</h3>
-        </div>
-        <div class="live__point-body">
-          <p class="live__point-desc">配信中にコメントで直接やり取り。ギフトやスタンプで応援の気持ちを届ければ、キャストからリアルタイムでリアクションが返ってきます。画面越しでも推しとの距離がぐっと近くなる体験を。</p>
-          <ul class="live__point-list">
-            <li>・リアルタイムのコメント交流</li>
-            <li>・ギフト・スタンプで応援を可視化</li>
-            <li>・推しからの直接リアクション</li>
-          </ul>
-        </div>
-        </div>
-      </div>
-
-      <div class="live__divider"><img src="https://www.figma.com/api/mcp/asset/216faf96-3947-46b6-88a6-8c67227aaf93" alt="" /></div>
-
-      <!-- POINT 3 -->
-      <div class="live__point">
-        <div class="live__point-img live__point-img--pink">
-          <img src="https://www.figma.com/api/mcp/asset/67e85aa7-0040-47e5-af89-5b93767627a6" alt="いつでもどこでも" />
-        </div>
-        <div class="live__point-text">
-<div class="live__point-header">
-          <span class="live__point-tag">POINT 3</span>
-          <h3 class="live__point-title">いつでもどこでも推しに会える</h3>
-        </div>
-        <div class="live__point-body">
-          <p class="live__point-desc">行けない日も、遠くにいても、CasLiveがあれば推しに会える。通知が届いたらすぐに配信をチェック。スキマ時間がいちばん熱い推し活の時間に変わります。</p>
-          <ul class="live__point-list">
-            <li>・場所を選ばずライブ体験</li>
-            <li>・プッシュ通知で見逃し防止</li>
-            <li>・スキマ時間に気軽にチェック</li>
-          </ul>
-        </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== ライブコマース ===== -->
-  <section class="commerce" id="commerce">
-    <!-- 背景: #9B73D4 + 背景画像 opacity 24% -->
-    <div class="commerce__bg"></div>
-    <img src="https://www.figma.com/api/mcp/asset/e08c57b0-83fa-4ec9-be51-c6ce6b85699a" alt="" class="commerce__bg-img" />
-
-    <div class="section-inner">
-      <!-- タイトル -->
-      <div class="section-title">
-        <p class="section-title__en" style="color: var(--color-base-1)">LIVE COMMERCE</p>
-        <h2 class="section-title__ja" style="color: #fff">配信を観ながら<span style="color: var(--color-accent-1)">グッズをゲット</span></h2>
-      </div>
-
-      <!-- 説明ボックス: 白枠 -->
-      <div class="commerce__intro">
-        <div class="commerce__intro-box">
-          <p class="commerce__intro-heading">ライブコマース<span style="font-weight:700">って…？</span></p>
-          <p class="commerce__intro-text">ライブ配信中にキャストが紹介する商品を、その場でそのまま購入できるシステムです。推しが実際に愛用しているアイテムや限定グッズなど、ここだけの商品が手に入ります。</p>
-        </div>
-      </div>
-
-      <!-- 3つの横長カード -->
-      <div class="commerce__list">
-
-        <!-- 項目1: テキスト左 + 画像右 -->
-        <div class="commerce__card-row">
-          <div class="commerce__card-text">
-            <h3 class="commerce__card-title"><span class="text-purple-light">推しから直接おすすめ</span>してもらえる</h3>
-            <p class="commerce__card-desc">キャストが商品のこだわりポイントをライブで紹介。気になることはコメントで直接質問できるから、納得してお買い物できます。</p>
-          </div>
-          <div class="commerce__card-img-wrap">
-            <img src="https://www.figma.com/api/mcp/asset/0ad43fec-8106-4451-91ad-27b43e89ffa5" alt="おすすめ" />
-          </div>
-        </div>
-
-        <!-- 項目2: 画像左 + テキスト右 -->
-        <div class="commerce__card-row">
-          <div class="commerce__card-img-wrap">
-            <img src="https://www.figma.com/api/mcp/asset/b9c0e97f-066b-40a4-833e-f95adcdf8223" alt="購入" />
-          </div>
-          <div class="commerce__card-text">
-            <h3 class="commerce__card-title"><span style="color:#1a1a1a">配信中に</span><span class="text-purple-light">そのまま購入</span><span style="color:#1a1a1a">、操作もかんたん</span></h3>
-            <p class="commerce__card-desc">欲しいと思ったら、配信画面を離れることなくその場で購入完了。推しのライブ限定アイテムも見逃しません。</p>
-          </div>
-        </div>
-
-        <!-- 項目3: テキスト左 + 画像右 -->
-        <div class="commerce__card-row">
-          <div class="commerce__card-text">
-            <h3 class="commerce__card-title"><span class="text-purple-light">遠隔</span><span style="color:#151515">で推しにプレゼント</span><span style="color:#1a1a1a">を贈れる</span></h3>
-            <p class="commerce__card-desc">配信中にライバーへサプライズでプレゼントを贈ることも可能。推しのリアクションをリアルタイムで見届けましょう。</p>
-          </div>
-          <div class="commerce__card-img-wrap">
-            <img src="https://www.figma.com/api/mcp/asset/3f53127f-3930-4ebb-a56d-61a011ece22c" alt="プレゼント" />
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 近日公開新機能 ===== -->
-  <section class="features" id="features">
-    <div class="features__bg"></div>
-    <div class="section-inner">
-      <div class="section-title">
-        <p class="section-title__en gradient-text">NEW FEATURES</p>
-        <h2 class="section-title__ja">近日公開！待望の<span class="text-blue">ライブ新機能</span></h2>
-      </div>
-      <div class="features__cards">
-
-        <!-- カード1: コラボ配信・バトル企画 -->
-        <div class="features__card">
-          <div class="features__card-label">
-            <img src="https://www.figma.com/api/mcp/asset/8d9565d2-9d0e-4b94-b37c-0851bc715f56" alt="" />
-            <span class="features__card-title">コラボ配信・バトル企画</span>
-          </div>
-          <div class="features__card-mockups">
-            <!-- 左下: LP-mockup-BT 2  w=205 h=322 left=0 top=49 -->
-            <img src="https://www.figma.com/api/mcp/asset/4ec0372d-484e-4b03-8dc2-bd8c6b4e3e7e" alt="バトル" class="features__mockup features__mockup--left" />
-            <!-- 右上: LP-mockup-VS 2  w=205 h=322 left=124 top=0 -->
-            <img src="https://www.figma.com/api/mcp/asset/8be00fd5-8431-442f-99bb-f6d2150e9037" alt="VS" class="features__mockup features__mockup--right" />
-          </div>
-          <p class="features__card-text">人気ライバーのコラボ配信やバトル企画など盛り上がる新機能を近日公開予定です。</p>
-        </div>
-
-        <!-- カード2: ECショップ -->
-        <div class="features__card">
-          <div class="features__card-label">
-            <img src="https://www.figma.com/api/mcp/asset/33fef364-ee14-4384-aae8-7f01449972f4" alt="" />
-            <span class="features__card-title">ECショップ</span>
-          </div>
-          <div class="features__card-mockups features__card-mockups--ec">
-            <!-- 左上: Smartphone 2  w=219 h=320 left=0 top=0 -->
-            <img src="https://www.figma.com/api/mcp/asset/33963507-8be1-4685-96c0-1ebd5dca5be5" alt="ECショップ" class="features__mockup features__mockup--left" />
-            <!-- 右下: Smartphone 1  w=206 h=324 left=143 top=39 -->
-            <img src="https://www.figma.com/api/mcp/asset/ca03f0b7-33ea-49b9-abac-154d02127829" alt="ECショップ" class="features__mockup features__mockup--right" />
-          </div>
-          <p class="features__card-text">配信の有無にかかわらず、お気に入りの店舗やキャストのオリジナルグッズ・アイテムをいつでも購入できるECショップを開設予定です。</p>
-        </div>
-
-        <!-- カード3: オークション -->
-        <div class="features__card">
-          <div class="features__card-label">
-            <img src="https://www.figma.com/api/mcp/asset/e5b69abf-4d6c-445a-9fd0-26b54646fa4e" alt="" />
-            <span class="features__card-title">オークション</span>
-          </div>
-          <div class="features__card-mockups features__card-mockups--auction">
-            <!-- 左下: Group1  w=129 h=267 left=0 top=52 -->
-            <img src="https://www.figma.com/api/mcp/asset/4e6d3ff6-4b46-4475-8ba4-1550299c79a9" alt="オークション" class="features__mockup features__mockup--left" />
-            <!-- 右上: Group2  w=174 h=359 left=109 top=0 -->
-            <img src="https://www.figma.com/api/mcp/asset/14e1ca97-fd87-4b5d-a044-79db06f914dc" alt="オークション" class="features__mockup features__mockup--right" />
-          </div>
-          <p class="features__card-text">キャストの着用衣装やサイン入りアイテムなど、プレミアムな一点モノが出品される特別オークションも開催予定です。</p>
-        </div>
-
-      </div>
-      <p class="features__note">※ 新機能画像はイメージです。</p>
-    </div>
-  </section>
-
-  <!-- ===== DLセクション ===== -->
-  <section class="download-cta">
-    <!-- 上部V字: featuresの白ドット背景を表現 -->
-    <div class="download-cta__wave">
-      <svg class="download-cta__wave-bg" viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <polygon points="0,0 720,160 1440,0" fill="#f8f8f8" />
-      </svg>
-      <div class="download-cta__wave-dots"></div>
-    </div>
-    <div class="download-cta__inner">
-
-      <!-- タイトル -->
-      <div class="section-title">
-        <p class="section-title__en" style="color: var(--color-base-1)">CasLive</p>
-        <h2 class="section-title__ja" style="color: #fff">推しに会いに行こう</h2>
-      </div>
-
-      <!-- SP専用: スマホ画像 -->
-      <img src="https://www.figma.com/api/mcp/asset/75329d12-7cce-48f2-8a45-a13ea10594f3" alt="CasLiveアプリ" class="download-cta__sp-phone" style="display:none" />
-
-      <!-- 3列コンテンツ -->
-      <div class="download-cta__body">
-
-        <!-- 左列: アイコン + テキスト -->
-        <div class="download-cta__left">
-          <img src="https://www.figma.com/api/mcp/asset/7b9b22bb-6b69-4bf6-8ba1-07f975caa468" alt="CasLive" class="download-cta__icon" />
-          <div class="download-cta__text">
-            <p class="download-cta__catch">あなたの応援を、<br>確かなカタチに。</p>
-            <p>家に居ても、移動中でも、仕事の息抜き時間も。 CasLive（キャスライブ）は、ライブ視聴を楽しみながら、限定グッズや特別なサービスをその場で購入できる、新感覚の推し活特化型ライブコマースアプリです。</p>
-          </div>
-        </div>
-
-        <!-- 中央列: スマホ目玉画像 -->
-        <div class="download-cta__phone-wrap">
-          <img src="https://www.figma.com/api/mcp/asset/75329d12-7cce-48f2-8a45-a13ea10594f3" alt="CasLiveアプリ" class="download-cta__phone" />
-        </div>
-
-        <!-- 区切り線 -->
-        <div class="download-cta__divider"></div>
-
-        <!-- 右列: QR + ストアバッジ -->
-        <div class="download-cta__right">
-          <div class="download-cta__qr">
-            <img src="https://www.figma.com/api/mcp/asset/19e18e34-e855-415e-87f9-d25c4e631a84" alt="QRコード（仮）" />
-          </div>
-          <div class="download-cta__stores">
-            <a href="#" class="download-cta__store-btn">
-              <img src="assets/images/badge-appstore.png" alt="App Store" />
-            </a>
-            <a href="#" class="download-cta__store-btn">
-              <img src="assets/images/badge-google.png" alt="Google Play" />
-            </a>
-          </div>
-        </div>
-
-        <!-- SP専用: テキスト -->
-        <div class="download-cta__text download-cta__text--sp">
-          <p class="download-cta__catch">あなたの応援を、<br>確かなカタチに。</p>
-          <p>家に居ても、移動中でも、仕事の息抜き時間も。 CasLive（キャスライブ）は、ライブ視聴を楽しみながら、限定グッズや特別なサービスをその場で購入できる、新感覚の推し活特化型ライブコマースアプリです。</p>
-        </div>
-
-        <!-- SP専用: アイコン + バッジ -->
-        <div class="download-cta__sp-row">
-          <img src="https://www.figma.com/api/mcp/asset/7b9b22bb-6b69-4bf6-8ba1-07f975caa468" alt="CasLive" class="download-cta__icon" />
-          <div class="download-cta__stores">
-            <a href="#" class="download-cta__store-btn">
-              <img src="assets/images/badge-appstore.png" alt="App Store" />
-            </a>
-            <a href="#" class="download-cta__store-btn">
-              <img src="assets/images/badge-google.png" alt="Google Play" />
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 新着情報 ===== -->
-  <section class="news" id="news">
-    <div class="section-inner">
-      <div class="section-title">
-        <p class="section-title__en gradient-text">NEWS</p>
-        <h2 class="section-title__ja">新着情報</h2>
-      </div>
-      <div class="news__tags">
-        <button class="news__tag news__tag--all active" data-filter="all">すべて</button>
-        <button class="news__tag news__tag--info" data-filter="info">お知らせ</button>
-        <button class="news__tag news__tag--event" data-filter="event">イベント</button>
-        <button class="news__tag news__tag--campaign" data-filter="campaign">キャンペーン</button>
-      </div>
-      <div class="news__list">
-        <a href="#" class="news__item" data-category="event">
-          <div class="news__item-content">
-            <div class="news__item-meta">
-              <span class="news__badge news__badge--event">イベント</span>
-              <span class="news__date">2026. 03. 18 (Wed)</span>
+    <!-- ===== ライバー・ユーザー紹介 ===== -->
+    <section class="users" id="users">
+      <div class="users__flow">
+        <!-- ライバー -->
+        <div class="users__col">
+          <div class="users__label users__label--liver">ライバー</div>
+          <div class="users__img-wrap">
+            <img src="https://www.figma.com/api/mcp/asset/08ecb84e-1f35-4f17-8cb4-85d46392604e" alt="ライバー画面" class="users__app-img" />
+            <div class="users__badge users__badge--left users__badge--blue">
+              <img src="https://www.figma.com/api/mcp/asset/fbeaa014-c253-4d78-8449-128fda7047e2" alt="" />
+              <span>
+                配信詳細
+                <br />
+                設定
+              </span>
             </div>
-            <p class="news__item-title">イベント「新人さんあつまれ！」開催！</p>
-          </div>
-          <span class="news__arrow">›</span>
-        </a>
-        <a href="#" class="news__item" data-category="campaign">
-          <div class="news__item-content">
-            <div class="news__item-meta">
-              <span class="news__badge news__badge--campaign">キャンペーン</span>
-              <span class="news__date">2026. 03. 18 (Wed)</span>
+            <div class="users__badge users__badge--right users__badge--blue">
+              <img src="https://www.figma.com/api/mcp/asset/5fe2400f-ac4d-45d7-82be-18b5e4148554" alt="" />
+              <span>
+                美顔機能
+                <br />
+                充実
+              </span>
             </div>
-            <p class="news__item-title">キャンペーン第一弾「わたしを推して」開催！</p>
           </div>
-          <span class="news__arrow">›</span>
-        </a>
-        <a href="#" class="news__item" data-category="info">
-          <div class="news__item-content">
-            <div class="news__item-meta">
-              <span class="news__badge news__badge--info">お知らせ</span>
-              <span class="news__date">2026. 03. 18 (Wed)</span>
-            </div>
-            <p class="news__item-title">CasLive正式リリース！</p>
-          </div>
-        </a>
-      </div>
-      <button class="news__more">
-        もっと見る
-        <img src="https://www.figma.com/api/mcp/asset/f20ab9d9-5c24-4564-a51d-0a824e9b4575" alt="" class="news__more-icon" />
-      </button>
-    </div>
-  </section>
+          <p class="users__desc">
+            CasLiveには、
+            <span class="text-blue">人気店の現役キャストたちが配信中。</span>
+            お店では見られない素顔やオフショットも、ここだけの特別なコンテンツとして届けてくれます。
+          </p>
+        </div>
 
-  <!-- ===== バナー ===== -->
-  <section class="banners">
+        <!-- 中央の区切り線 -->
+        <div class="users__divider"></div>
+
+        <!-- 視聴者 -->
+        <div class="users__col">
+          <div class="users__label users__label--viewer">視聴者</div>
+          <div class="users__img-wrap">
+            <img src="https://www.figma.com/api/mcp/asset/f28feb2b-5814-4dd0-bda3-4f7d7e15057b" alt="視聴者画面" class="users__app-img" />
+            <div class="users__badge users__badge--left users__badge--purple">
+              <img src="https://www.figma.com/api/mcp/asset/5fe2400f-ac4d-45d7-82be-18b5e4148554" alt="" />
+              <span>
+                ギフト
+                <br />
+                スタンプ
+              </span>
+            </div>
+            <div class="users__badge users__badge--right users__badge--purple">
+              <img src="https://www.figma.com/api/mcp/asset/5fe2400f-ac4d-45d7-82be-18b5e4148554" alt="" />
+              <span>コメント</span>
+            </div>
+          </div>
+          <p class="users__desc">
+            推しキャストの配信をリアルタイムで楽しみながら、
+            <span class="text-purple">スタンプやギフトで気持ちを届けよう。</span>
+            CasLiveならいつでも推しとつながれます。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ライブ配信とリアルタイム交流 ===== -->
+    <section class="live" id="live">
+      <!-- V字ウェーブ -->
+      <div class="live__wave">
+        <img src="https://www.figma.com/api/mcp/asset/994b2780-61c2-4fea-95c1-54fa1297e205" alt="" />
+      </div>
+      <div class="live__title">
+        <p class="section-title__en gradient-text">LIVE STREAMING</p>
+        <h2 class="live__heading">
+          推しと
+          <span class="text-blue">リアルタイム</span>
+          で交流しよう
+        </h2>
+      </div>
+
+      <div class="live__points">
+        <!-- POINT 1 -->
+        <div class="live__point">
+          <div class="live__point-img live__point-img--pink">
+            <img src="https://www.figma.com/api/mcp/asset/4b96aadc-7650-4a7d-9820-87a67054566d" alt="推しのリアルに出会える配信" />
+          </div>
+          <div class="live__point-text">
+            <div class="live__point-header">
+              <span class="live__point-tag">POINT 1</span>
+              <h3 class="live__point-title">推しのリアルに出会える配信</h3>
+            </div>
+            <div class="live__point-body">
+              <p class="live__point-desc">お気に入りのキャストがお店からリアルタイムで配信。カウンター越しの笑顔も、準備中のオフショットも、ここだけの瞬間をライブでお届けします。</p>
+              <ul class="live__point-list">
+                <li>・お店の雰囲気をリアルタイムで体感</li>
+                <li>・日常のオフショットも見られる</li>
+                <li>・通知設定で配信開始を見逃さない</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="live__divider"><img src="https://www.figma.com/api/mcp/asset/216faf96-3947-46b6-88a6-8c67227aaf93" alt="" /></div>
+
+        <!-- POINT 2 -->
+        <div class="live__point">
+          <div class="live__point-img live__point-img--pink">
+            <img src="https://www.figma.com/api/mcp/asset/d5735e88-6414-4ff9-bbe7-00cce80c916a" alt="コメントとギフト" />
+          </div>
+          <div class="live__point-text">
+            <div class="live__point-header">
+              <span class="live__point-tag">POINT 2</span>
+              <h3 class="live__point-title">コメントとギフトで想いを届ける</h3>
+            </div>
+            <div class="live__point-body">
+              <p class="live__point-desc">
+                配信中にコメントで直接やり取り。ギフトやスタンプで応援の気持ちを届ければ、キャストからリアルタイムでリアクションが返ってきます。画面越しでも推しとの距離がぐっと近くなる体験を。
+              </p>
+              <ul class="live__point-list">
+                <li>・リアルタイムのコメント交流</li>
+                <li>・ギフト・スタンプで応援を可視化</li>
+                <li>・推しからの直接リアクション</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="live__divider"><img src="https://www.figma.com/api/mcp/asset/216faf96-3947-46b6-88a6-8c67227aaf93" alt="" /></div>
+
+        <!-- POINT 3 -->
+        <div class="live__point">
+          <div class="live__point-img live__point-img--pink">
+            <img src="https://www.figma.com/api/mcp/asset/67e85aa7-0040-47e5-af89-5b93767627a6" alt="いつでもどこでも" />
+          </div>
+          <div class="live__point-text">
+            <div class="live__point-header">
+              <span class="live__point-tag">POINT 3</span>
+              <h3 class="live__point-title">いつでもどこでも推しに会える</h3>
+            </div>
+            <div class="live__point-body">
+              <p class="live__point-desc">行けない日も、遠くにいても、CasLiveがあれば推しに会える。通知が届いたらすぐに配信をチェック。スキマ時間がいちばん熱い推し活の時間に変わります。</p>
+              <ul class="live__point-list">
+                <li>・場所を選ばずライブ体験</li>
+                <li>・プッシュ通知で見逃し防止</li>
+                <li>・スキマ時間に気軽にチェック</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ライブコマース ===== -->
+    <section class="commerce" id="commerce">
+      <!-- 背景: #9B73D4 + 背景画像 opacity 24% -->
+      <div class="commerce__bg"></div>
+      <img src="https://www.figma.com/api/mcp/asset/e08c57b0-83fa-4ec9-be51-c6ce6b85699a" alt="" class="commerce__bg-img" />
+
+      <div class="section-inner">
+        <!-- タイトル -->
+        <div class="section-title">
+          <p class="section-title__en" style="color: var(--color-base-1)">LIVE COMMERCE</p>
+          <h2 class="section-title__ja" style="color: #fff">
+            配信を観ながら
+            <span style="color: var(--color-accent-1)">グッズをゲット</span>
+          </h2>
+        </div>
+
+        <!-- 説明ボックス: 白枠 -->
+        <div class="commerce__intro">
+          <div class="commerce__intro-box">
+            <p class="commerce__intro-heading">
+              ライブコマース
+              <span style="font-weight: 700">って…？</span>
+            </p>
+            <p class="commerce__intro-text">
+              ライブ配信中にキャストが紹介する商品を、その場でそのまま購入できるシステムです。推しが実際に愛用しているアイテムや限定グッズなど、ここだけの商品が手に入ります。
+            </p>
+          </div>
+        </div>
+
+        <!-- 3つの横長カード -->
+        <div class="commerce__list">
+          <!-- 項目1: テキスト左 + 画像右 -->
+          <div class="commerce__card-row">
+            <div class="commerce__card-text">
+              <h3 class="commerce__card-title">
+                <span class="text-purple-light">推しから直接おすすめ</span>
+                してもらえる
+              </h3>
+              <p class="commerce__card-desc">キャストが商品のこだわりポイントをライブで紹介。気になることはコメントで直接質問できるから、納得してお買い物できます。</p>
+            </div>
+            <div class="commerce__card-img-wrap">
+              <img src="https://www.figma.com/api/mcp/asset/0ad43fec-8106-4451-91ad-27b43e89ffa5" alt="おすすめ" />
+            </div>
+          </div>
+
+          <!-- 項目2: 画像左 + テキスト右 -->
+          <div class="commerce__card-row">
+            <div class="commerce__card-img-wrap">
+              <img src="https://www.figma.com/api/mcp/asset/b9c0e97f-066b-40a4-833e-f95adcdf8223" alt="購入" />
+            </div>
+            <div class="commerce__card-text">
+              <h3 class="commerce__card-title">
+                <span style="color: #1a1a1a">配信中に</span>
+                <span class="text-purple-light">そのまま購入</span>
+                <span style="color: #1a1a1a">、操作もかんたん</span>
+              </h3>
+              <p class="commerce__card-desc">欲しいと思ったら、配信画面を離れることなくその場で購入完了。推しのライブ限定アイテムも見逃しません。</p>
+            </div>
+          </div>
+
+          <!-- 項目3: テキスト左 + 画像右 -->
+          <div class="commerce__card-row">
+            <div class="commerce__card-text">
+              <h3 class="commerce__card-title">
+                <span class="text-purple-light">遠隔</span>
+                <span style="color: #151515">で推しにプレゼント</span>
+                <span style="color: #1a1a1a">を贈れる</span>
+              </h3>
+              <p class="commerce__card-desc">配信中にライバーへサプライズでプレゼントを贈ることも可能。推しのリアクションをリアルタイムで見届けましょう。</p>
+            </div>
+            <div class="commerce__card-img-wrap">
+              <img src="https://www.figma.com/api/mcp/asset/3f53127f-3930-4ebb-a56d-61a011ece22c" alt="プレゼント" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 近日公開新機能 ===== -->
+    <section class="features" id="features">
+      <div class="features__bg"></div>
+      <div class="section-inner">
+        <div class="section-title">
+          <p class="section-title__en gradient-text">NEW FEATURES</p>
+          <h2 class="section-title__ja">
+            近日公開！待望の
+            <span class="text-blue">ライブ新機能</span>
+          </h2>
+        </div>
+        <div class="features__cards">
+          <!-- カード1: コラボ配信・バトル企画 -->
+          <div class="features__card">
+            <div class="features__card-label">
+              <img src="https://www.figma.com/api/mcp/asset/8d9565d2-9d0e-4b94-b37c-0851bc715f56" alt="" />
+              <span class="features__card-title">コラボ配信・バトル企画</span>
+            </div>
+            <div class="features__card-mockups">
+              <!-- 左下: LP-mockup-BT 2  w=205 h=322 left=0 top=49 -->
+              <img src="https://www.figma.com/api/mcp/asset/4ec0372d-484e-4b03-8dc2-bd8c6b4e3e7e" alt="バトル" class="features__mockup features__mockup--left" />
+              <!-- 右上: LP-mockup-VS 2  w=205 h=322 left=124 top=0 -->
+              <img src="https://www.figma.com/api/mcp/asset/8be00fd5-8431-442f-99bb-f6d2150e9037" alt="VS" class="features__mockup features__mockup--right" />
+            </div>
+            <p class="features__card-text">人気ライバーのコラボ配信やバトル企画など盛り上がる新機能を近日公開予定です。</p>
+          </div>
+
+          <!-- カード2: ECショップ -->
+          <div class="features__card">
+            <div class="features__card-label">
+              <img src="https://www.figma.com/api/mcp/asset/33fef364-ee14-4384-aae8-7f01449972f4" alt="" />
+              <span class="features__card-title">ECショップ</span>
+            </div>
+            <div class="features__card-mockups features__card-mockups--ec">
+              <!-- 左上: Smartphone 2  w=219 h=320 left=0 top=0 -->
+              <img src="https://www.figma.com/api/mcp/asset/33963507-8be1-4685-96c0-1ebd5dca5be5" alt="ECショップ" class="features__mockup features__mockup--left" />
+              <!-- 右下: Smartphone 1  w=206 h=324 left=143 top=39 -->
+              <img src="https://www.figma.com/api/mcp/asset/ca03f0b7-33ea-49b9-abac-154d02127829" alt="ECショップ" class="features__mockup features__mockup--right" />
+            </div>
+            <p class="features__card-text">配信の有無にかかわらず、お気に入りの店舗やキャストのオリジナルグッズ・アイテムをいつでも購入できるECショップを開設予定です。</p>
+          </div>
+
+          <!-- カード3: オークション -->
+          <div class="features__card">
+            <div class="features__card-label">
+              <img src="https://www.figma.com/api/mcp/asset/e5b69abf-4d6c-445a-9fd0-26b54646fa4e" alt="" />
+              <span class="features__card-title">オークション</span>
+            </div>
+            <div class="features__card-mockups features__card-mockups--auction">
+              <!-- 左下: Group1  w=129 h=267 left=0 top=52 -->
+              <img src="https://www.figma.com/api/mcp/asset/4e6d3ff6-4b46-4475-8ba4-1550299c79a9" alt="オークション" class="features__mockup features__mockup--left" />
+              <!-- 右上: Group2  w=174 h=359 left=109 top=0 -->
+              <img src="https://www.figma.com/api/mcp/asset/14e1ca97-fd87-4b5d-a044-79db06f914dc" alt="オークション" class="features__mockup features__mockup--right" />
+            </div>
+            <p class="features__card-text">キャストの着用衣装やサイン入りアイテムなど、プレミアムな一点モノが出品される特別オークションも開催予定です。</p>
+          </div>
+        </div>
+        <p class="features__note">※ 新機能画像はイメージです。</p>
+      </div>
+    </section>
+
+    <!-- ===== DLセクション ===== -->
+    <section class="download-cta">
+      <!-- 上部V字: featuresの白ドット背景を表現 -->
+      <div class="download-cta__wave">
+        <svg class="download-cta__wave-bg" viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <polygon points="0,0 720,160 1440,0" fill="#f8f8f8" />
+        </svg>
+        <div class="download-cta__wave-dots"></div>
+      </div>
+      <div class="download-cta__inner">
+        <!-- タイトル -->
+        <div class="section-title">
+          <p class="section-title__en" style="color: var(--color-base-1)">CasLive</p>
+          <h2 class="section-title__ja" style="color: #fff">推しに会いに行こう</h2>
+        </div>
+
+        <!-- SP専用: スマホ画像 -->
+        <img src="https://www.figma.com/api/mcp/asset/75329d12-7cce-48f2-8a45-a13ea10594f3" alt="CasLiveアプリ" class="download-cta__sp-phone" style="display: none" />
+
+        <!-- 3列コンテンツ -->
+        <div class="download-cta__body">
+          <!-- 左列: アイコン + テキスト -->
+          <div class="download-cta__left">
+            <img src="https://www.figma.com/api/mcp/asset/7b9b22bb-6b69-4bf6-8ba1-07f975caa468" alt="CasLive" class="download-cta__icon" />
+            <div class="download-cta__text">
+              <p class="download-cta__catch">
+                あなたの応援を、
+                <br />
+                確かなカタチに。
+              </p>
+              <p>
+                家に居ても、移動中でも、仕事の息抜き時間も。
+                CasLive（キャスライブ）は、ライブ視聴を楽しみながら、限定グッズや特別なサービスをその場で購入できる、新感覚の推し活特化型ライブコマースアプリです。
+              </p>
+            </div>
+          </div>
+
+          <!-- 中央列: スマホ目玉画像 -->
+          <div class="download-cta__phone-wrap">
+            <img src="https://www.figma.com/api/mcp/asset/75329d12-7cce-48f2-8a45-a13ea10594f3" alt="CasLiveアプリ" class="download-cta__phone" />
+          </div>
+
+          <!-- 区切り線 -->
+          <div class="download-cta__divider"></div>
+
+          <!-- 右列: QR + ストアバッジ -->
+          <div class="download-cta__right">
+            <div class="download-cta__qr">
+              <img src="https://www.figma.com/api/mcp/asset/19e18e34-e855-415e-87f9-d25c4e631a84" alt="QRコード（仮）" />
+            </div>
+            <div class="download-cta__stores">
+              <a href="#" class="download-cta__store-btn">
+                <img src="assets/images/badge-appstore.png" alt="App Store" />
+              </a>
+              <a href="#" class="download-cta__store-btn">
+                <img src="assets/images/badge-google.png" alt="Google Play" />
+              </a>
+            </div>
+          </div>
+
+          <!-- SP専用: テキスト -->
+          <div class="download-cta__text download-cta__text--sp">
+            <p class="download-cta__catch">
+              あなたの応援を、
+              <br />
+              確かなカタチに。
+            </p>
+            <p>
+              家に居ても、移動中でも、仕事の息抜き時間も。
+              CasLive（キャスライブ）は、ライブ視聴を楽しみながら、限定グッズや特別なサービスをその場で購入できる、新感覚の推し活特化型ライブコマースアプリです。
+            </p>
+          </div>
+
+          <!-- SP専用: アイコン + バッジ -->
+          <div class="download-cta__sp-row">
+            <img src="https://www.figma.com/api/mcp/asset/7b9b22bb-6b69-4bf6-8ba1-07f975caa468" alt="CasLive" class="download-cta__icon" />
+            <div class="download-cta__stores">
+              <a href="#" class="download-cta__store-btn">
+                <img src="assets/images/badge-appstore.png" alt="App Store" />
+              </a>
+              <a href="#" class="download-cta__store-btn">
+                <img src="assets/images/badge-google.png" alt="Google Play" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 新着情報 ===== -->
+    <section class="news" id="news">
+      <div class="section-inner">
+        <div class="section-title">
+          <p class="section-title__en gradient-text">NEWS</p>
+          <h2 class="section-title__ja">新着情報</h2>
+        </div>
+        <div class="news__tags">
+          <button class="news__tag news__tag--all active" data-filter="all">すべて</button>
+          <button class="news__tag news__tag--info" data-filter="info">お知らせ</button>
+          <button class="news__tag news__tag--event" data-filter="event">イベント</button>
+          <button class="news__tag news__tag--campaign" data-filter="campaign">キャンペーン</button>
+        </div>
+        <div class="news__list">
+          <a href="#" class="news__item" data-category="event">
+            <div class="news__item-content">
+              <div class="news__item-meta">
+                <span class="news__badge news__badge--event">イベント</span>
+                <span class="news__date">2026. 03. 18 (Wed)</span>
+              </div>
+              <p class="news__item-title">イベント「新人さんあつまれ！」開催！</p>
+            </div>
+            <span class="news__arrow">›</span>
+          </a>
+          <a href="#" class="news__item" data-category="campaign">
+            <div class="news__item-content">
+              <div class="news__item-meta">
+                <span class="news__badge news__badge--campaign">キャンペーン</span>
+                <span class="news__date">2026. 03. 18 (Wed)</span>
+              </div>
+              <p class="news__item-title">キャンペーン第一弾「わたしを推して」開催！</p>
+            </div>
+            <span class="news__arrow">›</span>
+          </a>
+          <a href="#" class="news__item" data-category="info">
+            <div class="news__item-content">
+              <div class="news__item-meta">
+                <span class="news__badge news__badge--info">お知らせ</span>
+                <span class="news__date">2026. 03. 18 (Wed)</span>
+              </div>
+              <p class="news__item-title">CasLive正式リリース！</p>
+            </div>
+          </a>
+        </div>
+        <button class="news__more">
+          もっと見る
+          <img src="https://www.figma.com/api/mcp/asset/f20ab9d9-5c24-4564-a51d-0a824e9b4575" alt="" class="news__more-icon" />
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== バナー ===== -->
+    <!-- <section class="banners">
     <div class="banners__bg"></div>
     <div class="banners__inner">
       <a href="#" class="banners__item">
@@ -529,27 +574,27 @@
         <img src="https://www.figma.com/api/mcp/asset/c606e66c-9947-4c9d-b4e3-73a7a914a24d" alt="お問い合わせご相談" class="banners__img" />
       </a>
     </div>
-  </section>
+  </section> -->
 
-  <!-- ===== フッター ===== -->
-  <footer class="footer">
-    <div class="footer__inner">
-      <div class="footer__logo">
-        <img src="assets/images/logo.svg" alt="CasLive" />
+    <!-- ===== フッター ===== -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__logo">
+          <img src="assets/images/logo.svg" alt="CasLive" />
+        </div>
+        <div class="footer__bottom">
+          <nav class="footer__nav">
+            <a href="#" class="footer__nav-link">運営会社</a>
+            <a href="#" class="footer__nav-link">利用規約</a>
+            <a href="#" class="footer__nav-link">プライバシーポリシー</a>
+            <a href="#" class="footer__nav-link">FAQ</a>
+            <a href="#" class="footer__nav-link">資金決済法に基づく表記</a>
+          </nav>
+          <p class="footer__copy">© CasLive Inc.</p>
+        </div>
       </div>
-      <div class="footer__bottom">
-        <nav class="footer__nav">
-          <a href="#" class="footer__nav-link">運営会社</a>
-          <a href="#" class="footer__nav-link">利用規約</a>
-          <a href="#" class="footer__nav-link">プライバシーポリシー</a>
-          <a href="#" class="footer__nav-link">FAQ</a>
-          <a href="#" class="footer__nav-link">資金決済法に基づく表記</a>
-        </nav>
-        <p class="footer__copy">© CasLive Inc.</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script src="assets/js/script.js"></script>
-</body>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>

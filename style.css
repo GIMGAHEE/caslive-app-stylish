@@ -428,11 +428,11 @@ ul { list-style: none; }
   line-height: 0;
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 60px;
+  height: 70px;
 }
 .download-cta__wave-dots {
   width: 100%;
-  height: 62px;
+  height: 70px;
   background-color: #f8f8f8;
   background-image: radial-gradient(circle, #c8c8c8 1px, transparent 1px);
   background-size: 20px 20px;
@@ -527,12 +527,19 @@ ul { list-style: none; }
 
 /* === DOWNLOAD CTA === */
 .download-cta {
-  background-color: #B99CE0;
-  background-image: linear-gradient(0deg, #7FCDFE 0%, #B99CE0 100%), radial-gradient(circle, rgba(255,255,255,0.35) 1px, transparent 1px);
-  background-size: 100% 100%, 20px 20px;
+  background-color: #f8f8f8;
+  background-image: radial-gradient(circle, #c8c8c8 1px, transparent 1px);
+  background-size: 20px 20px;
   padding: clamp(140px,16vw,200px) var(--gutter) clamp(60px,8vw,80px);
   overflow: hidden;
   position: relative;
+}
+.download-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #7FCDFE 0%, #B99CE0 100%);
+  clip-path: polygon(0 4%, 50% 100%, 100% 4%, 100% 100%, 0 100%);
 }
 .download-cta__inner {
   display: flex;

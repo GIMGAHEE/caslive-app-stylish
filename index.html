@@ -393,22 +393,10 @@
   <section class="download-cta">
     <!-- 上部V字: featuresの白ドット背景を表現 -->
     <div class="download-cta__wave">
-      <!-- 삼각형 배경 -->
       <svg class="download-cta__wave-bg" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <polygon points="0,0 720,60 1440,0" fill="#f8f8f8" />
       </svg>
-      <!-- 도트 패턴 (찌그러짐 없이 별도 SVG) -->
-      <svg class="download-cta__wave-dots" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-        <defs>
-          <pattern id="wave-dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-            <circle cx="1" cy="1" r="1" fill="#c8c8c8" />
-          </pattern>
-          <clipPath id="wave-clip" clipPathUnits="objectBoundingBox">
-            <polygon points="0,0 0.5,1 1,0" />
-          </clipPath>
-        </defs>
-        <rect width="1440" height="60" fill="url(#wave-dots)" clip-path="url(#wave-clip)" />
-      </svg>
+      <div class="download-cta__wave-dots"></div>
     </div>
     <div class="download-cta__inner">
 

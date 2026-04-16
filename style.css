@@ -195,7 +195,7 @@ ul { list-style: none; }
 
 /* === CONNECTOR === */
 .connector { width: 100%; line-height: 0; }
-.connector img { width: 100%; display: block; }
+.connector img { width: 100%; display: block; max-height: 60px; object-fit: cover; }
 
 /* === USERS === */
 .users { background: #fff; padding: clamp(40px,5vw,60px) 0; overflow: visible; }
@@ -285,7 +285,7 @@ ul { list-style: none; }
 /* === LIVE === */
 .live { background: var(--color-base-1); padding: 0 0 clamp(60px,6vw,80px); }
 .live__wave { width: 100%; line-height: 0; }
-.live__wave img { width: 100%; display: block; max-height: 80px; object-fit: cover; }
+.live__wave img { width: 100%; display: block; max-height: 60px; object-fit: cover; }
 .live__title { text-align: center; padding: clamp(40px,5vw,80px) var(--gutter) clamp(32px,4vw,60px); }
 .live__heading { font-size: clamp(22px,3.2vw,60px); font-weight: 900; color: var(--color-text); margin-top: 6px; }
 .live__points { display: flex; flex-direction: column; align-items: center; width: 100%; overflow: hidden; }

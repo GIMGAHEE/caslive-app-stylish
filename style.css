@@ -310,13 +310,13 @@ ul { list-style: none; }
   padding: clamp(80px,9vw,120px) 0 clamp(80px,9vw,120px);
   overflow: hidden;
 }
-/* 배경색 */
+/* 背景色 */
 .commerce__bg {
   position: absolute; inset: 0;
   background: var(--color-main-2);
   z-index: 0;
 }
-/* 배경 이미지 (opacity 24%) */
+/* 背景画像 (opacity 24%) */
 .commerce__bg-img {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
@@ -727,7 +727,7 @@ ul { list-style: none; }
 
   /* ---- MV ---- */
   .mv { min-height: unset; padding: 80px var(--sp-gutter) 50px; }
-  /* SP순서: HTML順通り ヘッドライン→폰→サブテキスト→バッジ */
+  /* SP順序: HTML順通り ヘッドライン→スマホ→サブテキスト→バッジ */
   .mv__content {
     display: grid;
     grid-template-columns: 1fr;
@@ -763,7 +763,7 @@ ul { list-style: none; }
   .users__divider { width: 300px; height: 2px; min-height: unset; align-self: center; margin: 0; }
   .users__col { gap: 26px; align-items: center; }
   .users__label { font-size: 32px; padding: 4px 30px; }
-  /* Figma: 앱 이미지 크게 (344px 컨테이너) */
+  /* Figma: アプリ画像を大きく (344pxコンテナ) */
   .users__img-wrap { width: 100% !important; max-width: 95vw; overflow: visible; margin: 0 auto; display: flex; justify-content: center; }
   .users__app-img { width: 227px; border-radius: 16px; }
   .users__badge { width: 95px; height: 95px; outline: 2px solid #fff; }
@@ -787,7 +787,7 @@ ul { list-style: none; }
     gap: 24px;
     margin: 0 auto;
   }
-  /* SP순서: タグ+タイトル → 画像 → 説明 (grid使用) */
+  /* SP順序: タグ+タイトル → 画像 → 説明 (grid使用) */
   .live__point {
     display: grid;
     grid-template-areas: "header" "img" "body";
@@ -826,7 +826,7 @@ ul { list-style: none; }
     gap: 20px;
     border-radius: 30px;
   }
-  /* Figma: 이미지 위 / 타이틀+텍스트 아래 */
+  /* Figma: 画像上 / タイトル+テキスト下 */
   .commerce__card-img-wrap { order: -1; width: 270px; height: 526px; margin: 0; }
   .commerce__card-img-wrap img { object-fit: contain; }
   .commerce__card-text { order: 1; }
@@ -860,7 +860,7 @@ ul { list-style: none; }
   }
   .download-cta__inner > .section-title { margin-bottom: 0; }
   .download-cta__body { display: none; }
-  /* SP専用: 폰 + 텍스트 + 아이콘+배지 */
+  /* SP専用: スマホ + テキスト + アイコン+バッジ */
   .download-cta__sp-phone { display: block !important; width: 270px; margin: 0 auto; }
   .download-cta__text--sp {
     display: block;

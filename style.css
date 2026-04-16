@@ -731,10 +731,10 @@ ul { list-style: none; }
     aspect-ratio: 661/660;
     margin: 0 auto;
   }
-  /* mv__bottom을 display:contents로 풀어서 각 자식이 grid에 직접 참여 */
-  .mv__bottom { display: contents; }
-  .mv__subtext { grid-row: 3; text-align: center; width: 100%; }
-  .mv__download { grid-row: 4; justify-content: center; gap: 8px; width: 100%; }
+  /* mv__bottom: 자식들이 grid에 직접 참여 */
+  .mv__bottom { display: contents !important; }
+  .mv__subtext { grid-row: 3 !important; text-align: center; width: 100%; }
+  .mv__download { grid-row: 4 !important; justify-content: center; gap: 8px; width: 100%; }
   .mv__headline { align-items: flex-end; }
   .mv__headline-row { justify-content: flex-end; }
   .mv__text-img--left  { height: 71px; }

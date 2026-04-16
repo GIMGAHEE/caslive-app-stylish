@@ -428,11 +428,11 @@ ul { list-style: none; }
   line-height: 0;
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 120px;
+  height: 160px;
 }
 .download-cta__wave-bg {
   width: 100%;
-  height: 120px;
+  height: 160px;
   display: block;
   position: absolute;
   top: 0; left: 0;
@@ -441,7 +441,7 @@ ul { list-style: none; }
   position: absolute;
   top: 0; left: 0;
   width: 100%;
-  height: 120px;
+  height: 160px;
   background-image: radial-gradient(circle, #c8c8c8 1px, transparent 1px);
   background-size: 20px 20px;
   clip-path: polygon(0 0, 50% 100%, 100% 0);

@@ -801,7 +801,7 @@ ul { list-style: none; }
   .live__point-list { font-size: 14px; }
   .live__divider { width: 270px; max-width: 100%; margin: 51px auto; }
   .live__divider::after { display: none; }
-  .live__divider img { display: block; width: 100%; }
+  .live__divider img { display: block; width: 100%; height: 2px; }
 
   /* ---- Commerce ---- */
   .commerce { padding: 80px 0; }

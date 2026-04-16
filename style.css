@@ -539,7 +539,7 @@ ul { list-style: none; }
   position: absolute;
   inset: 0;
   background: linear-gradient(0deg, #7FCDFE 0%, #B99CE0 100%);
-  clip-path: polygon(0 4%, 50% 100%, 100% 4%, 100% 100%, 0 100%);
+  clip-path: polygon(0 60px, 50% 100%, 100% 60px, 100% 100%, 0 100%);
 }
 .download-cta__inner {
   display: flex;

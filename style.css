@@ -148,12 +148,7 @@ ul { list-style: none; }
   gap: clamp(20px,3.5vw,65px);
   align-items: flex-end;
 }
-/* PC: mv__bottom은 mv__text-block과 같은 flex column */
-.mv__bottom {
-  display: flex; flex-direction: column;
-  gap: clamp(20px,3.5vw,65px);
-  align-items: flex-end;
-}
+
 .mv__headline {
   display: flex; flex-direction: column; align-items: flex-end;
 }
@@ -707,30 +702,19 @@ ul { list-style: none; }
 
   /* ---- MV ---- */
   .mv { min-height: unset; padding: 80px 25px 50px; }
-  /* SP순서: ヘッドライン(1) → 폰(2) → サブテキスト(3) → バッジ(4) */
+  /* SP순서: HTML順通り ヘッドライン→폰→サブテキスト→バッジ */
   .mv__content {
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-areas: "headline" "phone" "subtext" "download";
     gap: 24px;
     margin-top: 24px;
     justify-items: center;
   }
-  .mv__text-block {
-    grid-row: 1;
-    width: 100%;
-    align-items: flex-end;
-    gap: 0;
-  }
-  .mv__movie-grid {
-    grid-row: 2;
-    width: min(300px, 88vw);
-    aspect-ratio: 661/660;
-    margin: 0 auto;
-  }
-  /* mv__bottom: SP에서 display:contents → 자식이 grid에 직접 참여 */
-  .mv__bottom { display: contents !important; }
-  .mv__subtext { order: 3; grid-row: 3; text-align: center; width: 100%; }
-  .mv__download { order: 4; grid-row: 4; justify-content: center; gap: 8px; width: 100%; }
+  .mv__text-block { grid-area: headline; width: 100%; align-items: flex-end; }
+  .mv__movie-grid { grid-area: phone; width: min(300px, 88vw); aspect-ratio: 661/660; margin: 0 auto; }
+  .mv__subtext    { grid-area: subtext; text-align: center; width: 100%; }
+  .mv__download   { grid-area: download; justify-content: center; gap: 8px; width: 100%; }
   .mv__headline { align-items: flex-end; }
   .mv__headline-row { justify-content: flex-end; }
   .mv__text-img--left  { height: 71px; }

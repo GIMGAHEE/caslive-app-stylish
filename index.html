@@ -63,29 +63,8 @@
     </div>
 
     <div class="mv__content">
-      <!-- 左: movie/image -->
-      <div class="mv__movie-grid">
-        <!-- app2: 右奥 ml=458.9 mt=142.35 w=202 h=358 -->
-        <img src="https://www.figma.com/api/mcp/asset/bf308ef3-3713-4580-9f4e-3259bc4df629"
-             alt="" class="mv__app2" />
-        <!-- app1: 中間 ml=252.84 mt=81.63 w=268.77 h=477.82 -->
-        <img src="https://www.figma.com/api/mcp/asset/f6848fb6-7062-4be3-afd6-8252aea6a248"
-             alt="" class="mv__app1" />
-        <!-- メインフレーム: ml=0 mt=0 w=360 h=642 白枠 -->
-        <div class="mv__main-frame">
-          <img src="https://www.figma.com/api/mcp/asset/f7e6781a-c184-452f-b6da-94debf1031d2"
-               alt="" class="mv__phone-thumb" id="mvThumb" />
-          <video class="mv__phone-video" id="mvVideo" muted playsinline preload="metadata">
-            <source src="pr-video.mp4" type="video/mp4" />
-          </video>
-          <!-- Circular Element: ml=107.51 mt=248.87 w=145 h=145 -->
-          <button class="mv__play-btn" id="mvPlayBtn" aria-label="再生">
-            <img src="https://www.figma.com/api/mcp/asset/301592c5-b8fd-42e1-91ed-c9fae17b735e" alt="再生" />
-          </button>
-        </div>
-      </div>
 
-      <!-- 右: テキスト/ボタン -->
+      <!-- [SP:1位 / PC:右列] ヘッドライン -->
       <div class="mv__text-block">
         <div class="mv__headline">
           <div class="mv__headline-row">
@@ -99,23 +78,43 @@
             <span class="mv__plain">。</span>
           </div>
         </div>
-        <!-- PC: display:contentsでtext-block内として振る舞う / SP: order:3で폰목업の下 -->
-        <div class="mv__bottom">
-          <div class="mv__subtext">
-            <p>行けない日も推しに会える場所</p>
-            <p>お店の空気感そのままライブで</p>
-            <p>ぜんぶここで応援がカタチに。</p>
-          </div>
-          <div class="mv__download">
-            <a href="#" class="mv__store-btn">
-              <img src="badge-appstore.png" alt="App Store" />
-            </a>
-            <a href="#" class="mv__store-btn">
-              <img src="badge-google.png" alt="Google Play" />
-            </a>
-          </div>
+      </div>
+
+      <!-- [SP:2位 / PC:左列] 폰목업 -->
+      <div class="mv__movie-grid">
+        <img src="https://www.figma.com/api/mcp/asset/bf308ef3-3713-4580-9f4e-3259bc4df629"
+             alt="" class="mv__app2" />
+        <img src="https://www.figma.com/api/mcp/asset/f6848fb6-7062-4be3-afd6-8252aea6a248"
+             alt="" class="mv__app1" />
+        <div class="mv__main-frame">
+          <img src="https://www.figma.com/api/mcp/asset/f7e6781a-c184-452f-b6da-94debf1031d2"
+               alt="" class="mv__phone-thumb" id="mvThumb" />
+          <video class="mv__phone-video" id="mvVideo" muted playsinline preload="metadata">
+            <source src="pr-video.mp4" type="video/mp4" />
+          </video>
+          <button class="mv__play-btn" id="mvPlayBtn" aria-label="再生">
+            <img src="https://www.figma.com/api/mcp/asset/301592c5-b8fd-42e1-91ed-c9fae17b735e" alt="再生" />
+          </button>
         </div>
       </div>
+
+      <!-- [SP:3位 / PC:右列続き] サブテキスト -->
+      <div class="mv__subtext">
+        <p>行けない日も推しに会える場所</p>
+        <p>お店の空気感そのままライブで</p>
+        <p>ぜんぶここで応援がカタチに。</p>
+      </div>
+
+      <!-- [SP:4位 / PC:右列続き] ダウンロードボタン -->
+      <div class="mv__download">
+        <a href="#" class="mv__store-btn">
+          <img src="badge-appstore.png" alt="App Store" />
+        </a>
+        <a href="#" class="mv__store-btn">
+          <img src="badge-google.png" alt="Google Play" />
+        </a>
+      </div>
+
     </div>
   </section>
 

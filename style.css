@@ -518,7 +518,9 @@ ul { list-style: none; }
 
 /* === DOWNLOAD CTA === */
 .download-cta {
-  background: linear-gradient(0deg, #7FCDFE 0%, #B99CE0 100%);
+  background-color: #B99CE0;
+  background-image: linear-gradient(0deg, #7FCDFE 0%, #B99CE0 100%), radial-gradient(circle, rgba(255,255,255,0.35) 1px, transparent 1px);
+  background-size: 100% 100%, 20px 20px;
   padding: clamp(140px,16vw,200px) var(--gutter) clamp(60px,8vw,80px);
   overflow: hidden;
   position: relative;

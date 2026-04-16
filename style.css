@@ -428,6 +428,7 @@ ul { list-style: none; }
   line-height: 0;
   position: absolute;
   top: 0; left: 0; right: 0;
+  height: 60px;
 }
 .download-cta__wave svg {
   width: 100%;
